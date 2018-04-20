@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities
 {
-    public class Class1
+    public class Client
     {
     }
 }
