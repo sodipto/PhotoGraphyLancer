@@ -48,7 +48,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public int Phone { get; set; }   
         
         
-        public virtual Client client { get; set; }    //Which Client Post the Jobs (Invidual)
+        public virtual Client client { get; set; }    //Which Client Post the Jobs Invidual
 
 
     }
