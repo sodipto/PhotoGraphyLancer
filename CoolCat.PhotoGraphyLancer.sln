@@ -10,7 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Direction", "Project Direction", "{CA4C9CA2-3E87-4737-986F-64783D7B285C}"
 	ProjectSection(SolutionItems) = preProject
 		core.Enties.txt = core.Enties.txt
-		Test.txt = Test.txt
 	EndProjectSection
 EndProject
 Global
