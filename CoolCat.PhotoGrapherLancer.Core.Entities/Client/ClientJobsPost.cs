@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 {
-    class ClientJobsPost
+   public class ClientJobsPost
     {
         [Key]
         public int PostId {get; set;}
@@ -45,7 +45,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 
         [Required]
         [MinLength(11, ErrorMessage = "Minimum 11 Digit"),MaxLength(11)]
-        public int Phone { get; set; }       
+        public int Phone { get; set; }   
+        
+        
+        public virtual Client client { get; set; }    //Which Client Post the Jobs (Invidual)
 
 
     }

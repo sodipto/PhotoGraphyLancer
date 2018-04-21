@@ -53,6 +53,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public string ImagePath { get; set; }            // NullAble Bydefault 
 
 
+
+        public virtual IEnumerable <ClientJobsPost> Client_Jobs_Post { get; set;}  //Indivisual Client Post
+
+
     }
 
 
