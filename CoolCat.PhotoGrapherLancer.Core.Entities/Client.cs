@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities
 {
+
+
+    // This iS The Client Model
+
     public class Client
     {
     }
+
+
+
 }
