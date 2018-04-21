@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoolCat.PhotoGrapherLancer.Core.Entities
+namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 {
 
 
