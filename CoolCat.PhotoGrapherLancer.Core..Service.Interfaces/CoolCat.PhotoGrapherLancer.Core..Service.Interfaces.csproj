@@ -41,7 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="IClientRepository\IClientRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core.Entities\CoolCat.PhotoGrapherLancer.Core.Entities.csproj">
+      <Project>{e27ba53c-cca9-4faa-ba2f-7362042aea30}</Project>
+      <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
