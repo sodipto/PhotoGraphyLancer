@@ -48,10 +48,11 @@
     <Compile Include="PhotoGraphyCatagory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="PhotoGrapher\" />
-    <Folder Include="PublicProfilePhotoGrapher\" />
+    <Content Include="Admin\Jummon.txt" />
+    <Content Include="PhotoGrapher\Akash.txt" />
+    <Content Include="PublicProfilePhotoGrapher\Projna.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
