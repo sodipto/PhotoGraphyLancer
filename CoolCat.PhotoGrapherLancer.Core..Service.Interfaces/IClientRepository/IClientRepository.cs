@@ -25,7 +25,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientRepository
 
         //Edit
 
-        bool Edit(Client editclient);
+        bool EditClient(Client editclient);
 
        //
 
