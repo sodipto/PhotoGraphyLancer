@@ -21,10 +21,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
         [Required(AllowEmptyStrings = false, ErrorMessage = "UserName is required")]
         public string UserName { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Address is required")]
-        public string Address { get; set; }
-
-
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email is required")]
         [DataType(DataType.EmailAddress)]
