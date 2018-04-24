@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapherActivity
+   public class PhotoUpload
     {
         [Key]
-        public int ActivityID     { get; set; }
+        public int PhotoID     { get; set; }
 
         public int PhotoGrapherId { get; set; }
 
         public DateTime Date_time { get; set; }    //current date time when Activity Post
 
-        public string Description { get; set; }
+        public string ImagePath { get; set; }      //possible null
 
-        public string ImagePath   { get; set; }
+        public string Caption { get; set; }       //possible null
+
+        [Required]
+        public string Description { get; set; }   
 
         public int? Likes { get; set; }           
 
