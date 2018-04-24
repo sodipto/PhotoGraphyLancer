@@ -47,6 +47,7 @@
     <Compile Include="Client\ClientLogin .cs" />
     <Compile Include="Client\ClientResetPassword.cs" />
     <Compile Include="Client\JobsInterested.cs" />
+    <Compile Include="PhotoGrapher\ChangePassword.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher.cs" />
     <Compile Include="PhotoGraphyCatagory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
+namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public  class ChangePassword
+   public class ChangePassword
     {
 
         [Required(ErrorMessage = "CurrentPassword password required", AllowEmptyStrings = false)]
@@ -24,7 +24,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         [DataType(DataType.Password)]
         [Compare("NewPassword", ErrorMessage = "New password and confirm password does not match")]
         [Required(ErrorMessage = "Confirm password required", AllowEmptyStrings = false)]
-        
-        public string ConfirmPassword { get; set; }
+        [NotMapped]
+         public string ConfirmPassword { get; set; }
     }
 }
