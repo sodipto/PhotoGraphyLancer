@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\ChangePassword.cs" />
     <Compile Include="Client\Client.cs" />
     <Compile Include="Client\ClientJobsPost.cs" />
     <Compile Include="Client\ClientLogin .cs" />
