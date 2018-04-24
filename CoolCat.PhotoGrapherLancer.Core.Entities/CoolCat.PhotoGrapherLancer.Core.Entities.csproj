@@ -49,6 +49,7 @@
     <Compile Include="Client\JobsInterested.cs" />
     <Compile Include="PhotoGrapher\ChangePassword.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher.cs" />
+    <Compile Include="PhotoGrapher\PhotoGrapherActivity.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherAwards.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherExperience.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherSkills.cs" />
