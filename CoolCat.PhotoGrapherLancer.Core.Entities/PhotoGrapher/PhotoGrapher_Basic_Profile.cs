@@ -9,7 +9,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
    public class PhotoGrapher_Basic_Profile
     {
-
+        [Key]
         public int ProfileID { get; set; }
 
         public int Fk_PhotoGrapher_ID { get; set; }
