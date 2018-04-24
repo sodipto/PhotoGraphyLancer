@@ -23,6 +23,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
         [Required]
         public string Description { get; set; }   
 
+        public string CameraUsed { get; set; }
+
         public int? Likes { get; set; }           
 
 
