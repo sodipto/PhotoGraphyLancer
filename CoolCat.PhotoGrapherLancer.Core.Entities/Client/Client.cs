@@ -43,7 +43,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 
 
 
-
+        [MinLength(11, ErrorMessage = "Minimum 11 Digit"), MaxLength(11)]
         public int? Phone { get; set; }                 //Nullable Bydefault ?(nullable)
 
         public string Address { get; set; }              //NullAble Bydefault 
