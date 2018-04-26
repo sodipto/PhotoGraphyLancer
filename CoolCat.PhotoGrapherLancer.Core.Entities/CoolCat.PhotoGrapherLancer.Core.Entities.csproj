@@ -52,11 +52,11 @@
     <Compile Include="PhotoGrapher\CreateAlbum.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher.cs" />
     <Compile Include="PhotoGrapher\PhotoUpload.cs" />
-    <Compile Include="PhotoGrapher\PhotoGrapherAwards.cs" />
+    <Compile Include="PhotoGrapher\PhotoGrapherAward.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherExperience.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherSkills.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Basic_Profile.cs" />
-    <Compile Include="PhotoGrapher\PhotoGrapher_Followers.cs" />
+    <Compile Include="PhotoGrapher\PhotoGrapher_Follower.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Following.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_PhotoGraphy_Type.cs" />
     <Compile Include="PhotoGrapher\ProfilePicture.cs" />

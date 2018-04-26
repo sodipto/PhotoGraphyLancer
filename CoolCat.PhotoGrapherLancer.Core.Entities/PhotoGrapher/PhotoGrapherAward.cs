@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-     public class PhotoGrapherAwards   //This Class Is The use for award/price compition
+     public class PhotoGrapherAward   //This Class Is The use for award/price compition
     {
         [Key]
         public int AwardID { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapher_Followers
+   public class PhotoGrapher_Follower
     {
         [Key]
         public int FollowerID { get; set; }      //Increment Automatic
