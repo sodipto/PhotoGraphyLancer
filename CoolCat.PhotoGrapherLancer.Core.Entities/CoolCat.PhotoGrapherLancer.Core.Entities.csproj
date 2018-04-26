@@ -63,6 +63,7 @@
     <Compile Include="PhotoGraphyCatagory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicProfilePhotoGrapher\ClientContact.cs" />
+    <Compile Include="PublicProfilePhotoGrapher\PhotoGrapherBooking.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
