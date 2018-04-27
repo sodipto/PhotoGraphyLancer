@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
