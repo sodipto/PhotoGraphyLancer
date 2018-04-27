@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="IClientService\IClientJobsPost_Services.cs" />
-    <Compile Include="IClientService\IClientServices.cs" />
+    <Compile Include="IClientServiceInterface\IClientJobsPost_Services.cs" />
+    <Compile Include="IClientServiceInterface\IClientServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

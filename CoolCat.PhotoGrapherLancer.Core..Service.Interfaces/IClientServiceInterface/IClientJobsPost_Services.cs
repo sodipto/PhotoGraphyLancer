@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 
-namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientService
+namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInterface
 {
      public  interface IClientJobsPost_Services
     {
