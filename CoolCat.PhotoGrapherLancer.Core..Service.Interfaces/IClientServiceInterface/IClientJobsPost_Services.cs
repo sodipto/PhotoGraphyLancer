@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
+using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInterface
 {
@@ -51,12 +52,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         //All PhotoGrapher List
 
-        //IEnumerable<PhotoGrapher> GetAllPhotoGrapher();
+        IEnumerable<PhotoGrapher> GetAllPhotoGrapher();
 
 
         //Single PhotoGrapherProfile
 
-        //PhotoGrapher PhotoGrapherProfile(int id);
+        PhotoGrapher PhotoGrapherProfile(int id);
 
         #endregion
 

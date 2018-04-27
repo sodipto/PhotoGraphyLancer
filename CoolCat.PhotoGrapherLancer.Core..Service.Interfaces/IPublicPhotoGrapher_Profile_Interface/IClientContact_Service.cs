@@ -10,11 +10,16 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
     public interface IClientContact_Service
     {
 
+
+
+        //All The Contact Get By Admin
+
+        IEnumerable<ClientContact> AllGetContact();
+
+
         //Get Contact By PhotoGrapher
 
-        ClientContact
-
-
+        ClientContact GetContact(int id);  //Get By PhotoGrapher ID
 
 
         //Add Contact To The Database
