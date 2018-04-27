@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="IClientServiceInterface\IClientJobsPost_Services.cs" />
     <Compile Include="IClientServiceInterface\IClientServices.cs" />
+    <Compile Include="IPublicPhotoGrapher_Profile_Interface\IClientContact_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +52,7 @@
       <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
