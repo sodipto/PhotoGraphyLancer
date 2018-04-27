@@ -12,11 +12,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
     {
 
 
-       
-
-
-
-
+      
 
 
     }
