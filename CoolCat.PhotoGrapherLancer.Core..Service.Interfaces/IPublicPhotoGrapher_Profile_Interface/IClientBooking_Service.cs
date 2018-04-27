@@ -11,7 +11,24 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
    public interface IClientBooking_Service
     {
 
+        //Get All Booking Show By Admin
 
+       IEnumerable<PhotoGrapherBooking> GelALLBooking();
+
+
+
+       //PhtoGrapher All Booking List By PhotoGrapher ID
+       IEnumerable<PhotoGrapherBooking> GetBooking(int id);  //PhotoGrapher ID
+
+
+       //Client Details
+
+       Client GetClient(int id);  //Client Id Which Client Booking
+
+
+
+       //PhotoGrapher Booking By Client
+       bool AddBooking(PhotoGrapherBooking Booked);
       
 
 
