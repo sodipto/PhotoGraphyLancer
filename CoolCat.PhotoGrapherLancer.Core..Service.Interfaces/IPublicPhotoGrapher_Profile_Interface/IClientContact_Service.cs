@@ -20,7 +20,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
         ClientContact GetContact(int id);  //Get By PhotoGrapher ID/Client ID 
 
 
-        //Add Contact To The Database
+        //Add Contact To The Database Table
 
         bool AddContact(ClientContact Add_Contact);
 
