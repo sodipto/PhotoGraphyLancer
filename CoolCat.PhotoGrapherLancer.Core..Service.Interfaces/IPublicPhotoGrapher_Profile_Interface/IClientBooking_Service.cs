@@ -11,5 +11,15 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
     {
 
 
+        //Get All Booking Show By Admin
+
+
+
+
+
+
+
+
+
     }
 }
