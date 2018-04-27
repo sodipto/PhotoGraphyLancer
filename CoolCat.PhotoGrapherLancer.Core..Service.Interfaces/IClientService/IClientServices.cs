@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientRepository
+namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientService
 {
-    public interface IClientRepository
+    public interface IClientServices
     {
 
         //Client Profile

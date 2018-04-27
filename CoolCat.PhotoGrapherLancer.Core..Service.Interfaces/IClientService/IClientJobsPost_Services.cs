@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 
-namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientRepository
+namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientService
 {
-     public  interface IClientJobsPost_Repository
+     public  interface IClientJobsPost_Services
     {
 
         //Get All Client Post(By Client Id)
