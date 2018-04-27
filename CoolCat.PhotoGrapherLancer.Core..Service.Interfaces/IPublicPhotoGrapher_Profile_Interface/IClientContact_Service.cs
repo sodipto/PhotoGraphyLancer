@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,17 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
 {
     public interface IClientContact_Service
     {
+
+        //Get Contact By PhotoGrapher
+
+        ClientContact
+
+
+
+
+        //Add Contact To The Database
+
+        bool AddContact(ClientContact Add_Contact);
 
 
 
