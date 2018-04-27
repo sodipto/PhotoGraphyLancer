@@ -12,7 +12,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
 
 
         //All The Contact Get By Admin
-
+        IEnumerable<ClientContact> AllGetContact();
 
 
         //Get Contact By PhotoGrapher
