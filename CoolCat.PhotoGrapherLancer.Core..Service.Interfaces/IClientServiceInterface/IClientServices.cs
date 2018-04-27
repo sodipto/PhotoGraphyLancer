@@ -10,9 +10,11 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
     public interface IClientServices
     {
 
-        //Client Profile
+        //Get All Client
+        IEnumerable<Client> GetallClient();
 
-        IEnumerable<Client> GetClient(int id);
+        //Client Profile
+          Client GetClient(int id);
 
 
         //Add Client
