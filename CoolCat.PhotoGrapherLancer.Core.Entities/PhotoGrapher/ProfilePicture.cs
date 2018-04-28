@@ -19,7 +19,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 
         public string ImagePath { get; set; }      //possible null
 
-        [DefaultValue("Unset")]                     
+        [DefaultValue("set")]                     
         public string status { get; set; }          //when picture set status change to current
 
 

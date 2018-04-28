@@ -142,7 +142,25 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
 
+        #region  //Change Profile Picture
 
+
+        //Get All Profile Picture By photoGrapher Id
+        //This id PhotoGrapher Id
+        IEnumerable<ProfilePicture> Get_All_ProfilePicture(int id);
+
+        //Add Profile Picture
+        bool Add_Profile_Picture(ProfilePicture chng);
+
+        //Active Profile Picture
+        //This picture id update status (set) And This PhotoGrapher Other Profile Picture Status unset
+        bool Active_Profile_Picture(int id, int PictureID);
+
+
+
+
+
+        #endregion
 
 
 
