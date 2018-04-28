@@ -21,15 +21,13 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         bool AddClient(Client Newclient);
 
-        //edit view
-
-        Client EditView(int id);
+    
 
         //Edit
 
         bool EditClient(Client editclient);
 
-       //
+       
 
 
     }
