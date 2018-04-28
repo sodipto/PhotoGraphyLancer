@@ -110,13 +110,35 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Update View 
         //This Id Skill ID
-        bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id);  
+        bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id);
 
         #endregion
 
 
 
 
+        #region //Price Details Section Add
+
+
+        //All PriceDetails by photoGrapherid
+        //This Id PhotoGrapher id
+        IEnumerable<PriceDetail> GetAll(int id);
+
+
+        //Get Price Details Invidual Id
+        //Price Id get Invidual id of the row
+        PriceDetail GetDetails(int priceId);
+
+
+
+        //Add Price Details
+        bool AddPrice(PriceDetail Add_Price);
+
+
+        //Update Price details 
+        bool UpdatePriceDetails(PriceDetail UpPrice);
+
+        #endregion
 
 
 
