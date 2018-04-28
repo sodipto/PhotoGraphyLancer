@@ -52,7 +52,7 @@
     <Compile Include="PhotoGrapher\CreateAlbum.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Ratting.cs" />
-    <Compile Include="PhotoGrapher\PhotoUpload.cs" />
+    <Compile Include="PhotoGrapher\PhotoUpload_Gallary.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherAward.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherExperience.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherSkills.cs" />

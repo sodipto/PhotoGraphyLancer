@@ -31,7 +31,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         bool Add_Albam_Photo(AlbamPhoto add);
 
 
-
         #endregion
 
 
