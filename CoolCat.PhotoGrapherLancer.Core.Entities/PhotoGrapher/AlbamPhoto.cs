@@ -20,13 +20,17 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 
         public DateTime Date_time { get; set; }    //current date time when Activity Post
 
+        [Required]
         public string ImagePath { get; set; }      //possible null
 
+        [Required]
         public string Caption { get; set; }       //possible null
 
         [Required]
         public string Description { get; set; }
 
         public string CameraUsed { get; set; }
+
+
     }
 }

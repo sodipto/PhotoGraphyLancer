@@ -21,7 +21,18 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         #endregion
 
 
+        #region //Albam Photo
 
+
+        //Get All This Albam Photo
+        IEnumerable<AlbamPhoto> GetAll_Albam_Photo(int AlbamId);
+
+        //Add Albam Photo By Albam Id
+        bool Add_Albam_Photo(AlbamPhoto add);
+
+
+
+        #endregion
 
 
     }
