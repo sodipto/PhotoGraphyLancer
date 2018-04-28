@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class ChangePassword
+   public class PhotoGrapherChangePassword
     {
 
         [Required(ErrorMessage = "CurrentPassword password required", AllowEmptyStrings = false)]
