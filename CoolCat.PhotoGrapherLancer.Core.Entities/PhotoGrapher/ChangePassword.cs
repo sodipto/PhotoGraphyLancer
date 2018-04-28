@@ -24,7 +24,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
         [DataType(DataType.Password)]
         [Compare("NewPassword", ErrorMessage = "New password and confirm password does not match")]
         [Required(ErrorMessage = "Confirm password required", AllowEmptyStrings = false)]
-        [NotMapped]
-         public string ConfirmPassword { get; set; }
+        public string ConfirmPassword { get; set; }
+
+        [Required]  //That is The Hidden
+        public int PhotoGrapherId { get; set; }
     }
 }

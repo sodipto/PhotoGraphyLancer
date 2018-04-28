@@ -26,5 +26,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         [Required(ErrorMessage = "Confirm password required", AllowEmptyStrings = false)]
         
         public string ConfirmPassword { get; set; }
+
+        [Required]  //That is The Hidden
+        public int ClientId { get; set; }
     }
 }
