@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,16 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
     public interface IPhotoGrapher_Album_Service
     {
 
-        
+        #region //Create Album
+
+        //Get All Album by PhotoGrapherID
+        IEnumerable<CreateAlbum> GetALL(int id);
+
+        //Create Album
+        bool CreateAlbum(CreateAlbum create);
+
+        #endregion
+
 
 
 
