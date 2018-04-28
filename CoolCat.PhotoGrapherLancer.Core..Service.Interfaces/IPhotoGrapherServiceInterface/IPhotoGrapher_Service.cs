@@ -63,7 +63,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
         //Add Experience
-        bool AddSkill(PhotoGrapherSkills AddSkill);
+        bool AddSkill(PhotoGrapherSkills Add_Skill);
 
         //Get Experience List By User Id
 
@@ -82,7 +82,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
         //Add Experience
-        bool AddAward(PhotoGrapherAward Exp);
+        bool AddAward(PhotoGrapherAward Add_Award);
 
         //Get Experience List By User Id
 
@@ -92,6 +92,24 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         //Update View 
 
         bool UpdateAward(PhotoGrapherAward UpAward, int id);  //This Id Skill ID
+
+        #endregion
+
+
+        #region //PhotoGrapher PhotoGarphy Type Region
+
+
+        //Add Experience
+        bool AddPhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type Add_Type);
+
+        //Get Experience List By User Id
+
+        IEnumerable<PhotoGrapher_PhotoGraphy_Type> GetPhotoGraphy_Type(int id); //This The PhotoGrapher ID Fetch All Experience This Id And Reurn List
+
+
+        //Update View 
+
+        bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id);  //This Id Skill ID
 
         #endregion
 
