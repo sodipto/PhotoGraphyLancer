@@ -164,7 +164,11 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
 
+        #region //Change Password
 
+        //Password Change 
+        bool ChangePassword(ChangePassword Pass_Change);
+        #endregion
 
 
 

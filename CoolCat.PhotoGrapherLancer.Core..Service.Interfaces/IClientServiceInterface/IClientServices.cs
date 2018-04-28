@@ -28,7 +28,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
         bool EditClient(Client editclient);
 
 
-        bool ChangePassword()
+        //Password Change 
+        bool ChangePassword(ChangePassword Pass_Change);
 
        
 
