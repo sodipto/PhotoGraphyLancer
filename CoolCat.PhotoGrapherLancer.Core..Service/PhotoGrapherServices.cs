@@ -142,11 +142,48 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         #endregion
 
 
+        #region //PhotoGrapher Award Region
+
+        //Get All Award PhotoGrapher
+        public IEnumerable<PhotoGrapherAward> GetAward(int id)
+        {
+            var get_All_award = Db.Set<PhotoGrapherAward>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            return get_All_award;
+        }
+
 
         public bool AddAward(PhotoGrapherAward Add_Award)
         {
-            throw new NotImplementedException();
+            Db.Set<PhotoGrapherAward>().Add(Add_Award);
+            Db.SaveChanges();
+
+
+            return true;
+
         }
+
+        //Award Update 
+        public bool UpdateAward(PhotoGrapherAward UpAward, int id)
+        {
+           var find_single_Award= Db.Set<PhotoGrapherAward>().Find(id);
+            if (find_single_Award != null)
+            {
+
+                Db.Entry(UpAward).State = EntityState.Modified;
+                Db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        #endregion
+
+
+
 
         public bool AddExperience(PhotoGrapherExperience Exp)
         {
@@ -186,10 +223,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PhotoGrapherAward> GetAward(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public PhotoGrapher_Basic_Profile GetBasicProfile(int id)
         {
@@ -226,12 +260,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         }
 
         
-
-        public bool UpdateAward(PhotoGrapherAward UpAward, int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public bool UpdateExperience(PhotoGrapherExperience ExpUpdate, int id)
         {
             throw new NotImplementedException();

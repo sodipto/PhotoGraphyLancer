@@ -34,7 +34,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         //Change Profile Picture
         public DbSet<ProfilePicture> ProfilePictures { get; set; }
 
-
+        //PhotoGrapher Award PhotoGrapherAward
+        public DbSet<PhotoGrapherAward> PhotoGrapherAwards { get; set; }
 
 
 

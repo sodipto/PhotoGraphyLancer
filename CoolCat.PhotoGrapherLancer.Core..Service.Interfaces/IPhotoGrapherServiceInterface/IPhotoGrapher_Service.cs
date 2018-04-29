@@ -88,12 +88,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         bool AddAward(PhotoGrapherAward Add_Award);
 
         //Get Experience List By User Id
-        //This The PhotoGrapher ID Fetch All Experience This Id And Reurn List
+        //This The PhotoGrapher ID Fetch All Award This Id And Reurn List
         IEnumerable<PhotoGrapherAward> GetAward(int id);
 
 
         //Update View 
-        //This Id Skill ID
+        //This Id Award ID
         bool UpdateAward(PhotoGrapherAward UpAward, int id);
 
         #endregion
