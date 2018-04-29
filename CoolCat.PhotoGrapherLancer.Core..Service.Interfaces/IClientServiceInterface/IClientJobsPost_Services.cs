@@ -7,6 +7,7 @@ using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 
+
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInterface
 {
      public  interface IClientJobsPost_Services
@@ -49,12 +50,15 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         //All PhotoGrapher List
 
-        IEnumerable<PhotoGrapher_Profile_ViewModel> GetAllPhotoGrapher();
+        IEnumerable<PhotoGrapher> GetAllPhotoGrapher();
 
 
         //Single PhotoGrapherProfile
 
-        PhotoGrapher_Profile_ViewModel PhotoGrapherProfile(int id);
+        PhotoGrapher PhotoGrapherProfile(int id);
+
+
+
 
         #endregion
 

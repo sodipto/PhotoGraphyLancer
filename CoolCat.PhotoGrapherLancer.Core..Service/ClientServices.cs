@@ -143,22 +143,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         }
 
 
-        public IEnumerable<Entities.PhotoGrapher.PhotoGrapher_Profile_ViewModel> GetAllPhotoGrapher()
-        {
-            return Db.Set<PhotoGrapher_Profile_ViewModel>().ToList();
-        }
-
-
-
-        public PhotoGrapher_Profile_ViewModel PhotoGrapherProfile(int id)
-        {
-
-            Core.Service.ServiceModel.PhotoGrapher_Profile_ViewModel obj_Profile_all = new Core.Service.ServiceModel.PhotoGrapher_Profile_ViewModel();
-
-            obj_Profile_all.pt = Db.Set<Entities.PhotoGrapher.PhotoGrapher_Profile_ViewModel>().Find(id);
-
-             return obj_Profile_all;
-        }
+        
 
 
         public IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory()
@@ -166,7 +151,20 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
             return Db.Set<PhotoGraphyCatagory>().ToList();
         }
 
-       
+        public IEnumerable<PhotoGrapher> GetAllPhotoGrapher()
+        {
+
+
+        }
+
+        public PhotoGrapher PhotoGrapherProfile(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
 
         #endregion
 

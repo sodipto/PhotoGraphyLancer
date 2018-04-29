@@ -15,18 +15,18 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         #region // PhotoGrapher Basic Profile
 
         //Get All PhotoGrapher
-        IEnumerable<PhotoGrapher_Profile_ViewModel> GetAll();
+        IEnumerable<PhotoGrapher> GetAll();
 
 
         //PhotoGrapher Details By Id
         //This Is The Get Id Then All type Of Details Fetch by This ID 
-        PhotoGrapher_Profile_ViewModel GetPhotoGrapher(int id);
+        PhotoGrapher GetPhotoGrapher(int id);
 
 
 
         //Add PhotoGrapher When Register Basic Item
         //When Add Another Table Update PhotoGrapher_Basic_Profile Only Id Update
-        bool AddPhotoGrapher(PhotoGrapher_Profile_ViewModel pht_Add);
+        bool AddPhotoGrapher(PhotoGrapher pht_Add);
 
 
         //Basic PhotoGrapher Additional Profile Item Edit View
