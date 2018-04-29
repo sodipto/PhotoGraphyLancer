@@ -340,54 +340,51 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #endregion
 
-        public bool AddJobInterest(JobsInterested Interest)
+
+
+
+
+        #region //Jobs Region
+
+
+        public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
         {
-            throw new NotImplementedException();
+            return Db.Set<JobsInterested>().Where(x => x.PhotoGrapherId == id).ToList();
+
         }
 
-       
 
-        
-
-       
-
-       
+        public bool AddJobInterest(JobsInterested Interest)
+        {
+            Db.Set<JobsInterested>().Add(Interest);
+            Db.SaveChanges();
 
 
-        
+            return true;
+        }
+
+
 
         public IEnumerable<ClientJobsPost> GetAll_Jobs_Post()
         {
-            throw new NotImplementedException();
+            return Db.Set<ClientJobsPost>().ToList();
         }
 
-       
+        #endregion
+
+
+
 
         public PhotoGrapher_Basic_Profile GetBasicProfile(int id)
         {
             throw new NotImplementedException();
         }
 
-      
-
-        public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        
-        
-        
-
-
-
-       
-
+    
         public bool Update_Profile_Item(PhotoGrapher_Basic_Profile BasicAdd)
         {
             throw new NotImplementedException();
         }
 
-        
     }
 }
