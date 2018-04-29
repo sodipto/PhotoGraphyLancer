@@ -144,7 +144,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
 
         public IEnumerable<PhotoGrapher> GetAllPhotoGrapher()
         {
-            throw new NotImplementedException();
+            return Db.Set<PhotoGrapher>().ToList();
         }
 
 
@@ -157,7 +157,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
 
         public IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory()
         {
-            throw new NotImplementedException();
+            return Db.Set<PhotoGraphyCatagory>().ToList();
         }
 
        

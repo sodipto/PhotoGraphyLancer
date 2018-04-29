@@ -1,4 +1,6 @@
-﻿using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
+﻿using CoolCat.PhotoGrapherLancer.Core.Entities;
+using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
+using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,7 +20,36 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<JobsInterested> JobsInteresteds { get; set; }
 
 
-       //PhotoGrapher
+        //PhotoGrapher 
+        public DbSet<PhotoGrapher> PhotoGraphers { get; set; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //PhotoGraphyCatagory
+
+        public DbSet<PhotoGraphyCatagory> PhotoGraphyCatagorys { get; set; }
+
+
+
+
+
+
 
 
     }

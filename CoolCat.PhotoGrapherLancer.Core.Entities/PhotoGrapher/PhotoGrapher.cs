@@ -49,5 +49,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 
 
 
+
+
+
+
     }
 }
