@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Direction", "Projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolCat.PhotoGrapherLancer.Core..Service", "CoolCat.PhotoGrapherLancer.Core..Service\CoolCat.PhotoGrapherLancer.Core..Service.csproj", "{D8484F9C-AA87-491C-B01E-E83A0B4EF34F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolCat.PhotoGrapherLancer.Core.Infrastructure", "CoolCat.PhotoGrapherLancer.Core.Infrastructure\CoolCat.PhotoGrapherLancer.Core.Infrastructure.csproj", "{C47FE2C8-F369-4987-A08C-F9EEFBE5F119}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{D8484F9C-AA87-491C-B01E-E83A0B4EF34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8484F9C-AA87-491C-B01E-E83A0B4EF34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8484F9C-AA87-491C-B01E-E83A0B4EF34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47FE2C8-F369-4987-A08C-F9EEFBE5F119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47FE2C8-F369-4987-A08C-F9EEFBE5F119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47FE2C8-F369-4987-A08C-F9EEFBE5F119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47FE2C8-F369-4987-A08C-F9EEFBE5F119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
