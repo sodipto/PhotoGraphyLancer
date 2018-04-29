@@ -158,6 +158,12 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
 
         public IEnumerable<PhotoGrapherProfile_ViewModel> PhotoGrapherProfile(int id)
         {
+            //   PhotoGrapherProfile_ViewModel objALL = new PhotoGrapherProfile_ViewModel();
+
+            // objALL.Pt= Db.Set<PhotoGrapher>().ToList() ;
+
+
+
             throw new NotImplementedException();
         }
 

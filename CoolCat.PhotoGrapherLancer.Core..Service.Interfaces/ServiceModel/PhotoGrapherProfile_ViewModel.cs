@@ -9,6 +9,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.ServiceModel
 {
     public class PhotoGrapherProfile_ViewModel
     {
-        public PhotoGrapher Pt { get; set; }
+        public IEnumerable<PhotoGrapher> Pt { get; set; }
     }
 }
