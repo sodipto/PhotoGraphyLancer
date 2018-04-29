@@ -7,40 +7,62 @@ using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
+using System.Data.Entity;
 
 namespace CoolCat.PhotoGrapherLancer.Core._.Service
 {
     public class ClientServices : IClientServices,IClientJobsPost_Services
     {
 
+        DbContext Db;
+
+        public ClientServices(DbContext context)
+        {
+
+            Db=context;
+
+        }
+
         #region // Client Service
 
         public IEnumerable<Client> GetallClient()
         {
-            throw new NotImplementedException();
+            return Db.Set<Client>().ToList();
         }
 
         public Client GetClient(int id)
         {
-            throw new NotImplementedException();
+            var obj_Client = Db.Set<Client>().Find(id);
+
+            return obj_Client;
         }
 
 
         public bool AddClient(Client Newclient)
         {
-            throw new NotImplementedException();
+            Db.Set<Client>().Add(Newclient);
+            Db.SaveChanges();
+
+
+            return true;
+
         }
 
 
 
         public bool EditClient(Client editclient)
         {
-            throw new NotImplementedException();
+
+            Db.Entry(editclient).State = EntityState.Modified;
+            Db.SaveChanges();
+            return true;
         }
 
         public bool ChangePassword(ChangePassword Pass_Change)
         {
-            throw new NotImplementedException();
+
+
+            return true;
         }
 
 
