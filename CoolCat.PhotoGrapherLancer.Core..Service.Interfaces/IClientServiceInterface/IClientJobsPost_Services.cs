@@ -49,12 +49,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         //All PhotoGrapher List
 
-        IEnumerable<PhotoGrapher> GetAllPhotoGrapher();
+        IEnumerable<PhotoGrapher_Profile_ViewModel> GetAllPhotoGrapher();
 
 
         //Single PhotoGrapherProfile
 
-        PhotoGrapher PhotoGrapherProfile(int id);
+        PhotoGrapher_Profile_ViewModel PhotoGrapherProfile(int id);
 
         #endregion
 

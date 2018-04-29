@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-    public  class PhotoGrapher
+    public  class PhotoGrapher_Profile_ViewModel
     {
 
         [Key]
