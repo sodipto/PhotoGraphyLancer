@@ -373,18 +373,22 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         #endregion
 
 
-
+        #region //PhotoGrahper Basic Profile
 
         public PhotoGrapher_Basic_Profile GetBasicProfile(int id)
         {
-            throw new NotImplementedException();
+            return Db.Set<PhotoGrapher_Basic_Profile>().Find(id);
         }
 
-    
+        //Update By default All Field Null
         public bool Update_Profile_Item(PhotoGrapher_Basic_Profile BasicAdd)
         {
-            throw new NotImplementedException();
+            Db.Entry(BasicAdd).State = EntityState.Modified;
+            Db.SaveChanges();
+            return true;
         }
+
+        #endregion
 
     }
 }
