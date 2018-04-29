@@ -47,7 +47,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<PhotoGrapher_PhotoGraphy_Type> PhotoGrapher_PhotoGraphy_Types { get; set; }
 
 
-
+        // PhotoGrapher PriceDetail Catagory
+        public DbSet<PriceDetail> PriceDetails { get; set; }
 
 
 

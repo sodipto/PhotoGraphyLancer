@@ -302,6 +302,44 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #endregion
 
+
+        #region //Price Catagory
+
+        //Get All Price List
+        public IEnumerable<PriceDetail> GetAll(int id)
+        {
+            return Db.Set<PriceDetail>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+        }
+
+        //Add
+        public bool AddPrice(PriceDetail Add_Price)
+        {
+            Db.Set<PriceDetail>().Add(Add_Price);
+            Db.SaveChanges();
+
+
+            return true;
+        }
+
+
+
+        public bool UpdatePriceDetails(PriceDetail UpPrice)
+        {
+            Db.Entry(UpPrice).State = EntityState.Modified;
+            Db.SaveChanges();
+            return true;
+        }
+
+
+        public PriceDetail GetDetails(int priceId)
+        {
+            return Db.Set<PriceDetail>().Find(priceId);
+        }
+
+
+
+        #endregion
+
         public bool AddJobInterest(JobsInterested Interest)
         {
             throw new NotImplementedException();
@@ -311,18 +349,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         
 
-        public bool AddPrice(PriceDetail Add_Price)
-        {
-            throw new NotImplementedException();
-        }
+       
 
        
 
 
-        public IEnumerable<PriceDetail> GetAll(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public IEnumerable<ClientJobsPost> GetAll_Jobs_Post()
         {
@@ -336,19 +368,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-       
-
-        public PriceDetail GetDetails(int priceId)
-        {
-            throw new NotImplementedException();
-        }
-
-       
-
-       
-
-       
-       
+      
 
         public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
         {
@@ -359,11 +379,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         
         
 
-        
-        public bool UpdatePriceDetails(PriceDetail UpPrice)
-        {
-            throw new NotImplementedException();
-        }
+
 
        
 
