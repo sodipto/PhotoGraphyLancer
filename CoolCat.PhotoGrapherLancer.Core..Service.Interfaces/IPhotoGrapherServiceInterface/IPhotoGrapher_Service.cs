@@ -150,6 +150,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         //Get All Profile Picture By photoGrapher Id
         //This id PhotoGrapher Id
         IEnumerable<ProfilePicture> Get_All_ProfilePicture(int id);
+        
+        //current Profile Picture
+        ProfilePicture CurrentProfilePicture(int id);
 
         //Add Profile Picture
         bool Add_Profile_Picture(ProfilePicture chng);

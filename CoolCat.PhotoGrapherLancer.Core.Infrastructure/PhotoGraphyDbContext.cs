@@ -31,6 +31,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         //Client Contacr PhotoGrapher
         public DbSet<ClientContact> ClientContacts { get; set; }
 
+        //Change Profile Picture
+        public DbSet<ProfilePicture> ProfilePictures { get; set; }
 
 
 
