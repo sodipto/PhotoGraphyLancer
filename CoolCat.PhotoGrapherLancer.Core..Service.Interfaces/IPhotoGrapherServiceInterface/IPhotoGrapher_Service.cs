@@ -66,16 +66,16 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
         //Add Experience
-        bool AddSkill(PhotoGrapherSkills Add_Skill);
+        bool AddSkill(PhotoGrapherSkill Add_Skill);
 
         //Get Experience List By User Id
         //This The PhotoGrapher ID Fetch All Experience This Id And Reurn List
-        IEnumerable<PhotoGrapherSkills> GetSkill(int id);
+        IEnumerable<PhotoGrapherSkill> GetSkill(int id);
 
 
         //Update View 
         //This Id Skill ID
-        bool UpdateSkill(PhotoGrapherSkills UpSkill, int id);  
+        bool UpdateSkill(PhotoGrapherSkill UpSkill, int id);  
 
         #endregion
 

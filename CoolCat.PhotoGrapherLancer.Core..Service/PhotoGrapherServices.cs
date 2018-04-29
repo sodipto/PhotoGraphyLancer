@@ -183,12 +183,54 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         #endregion
 
 
+        #region //PhotoGrapher Experience region
+
+        //Get All Experience
+        public IEnumerable<PhotoGrapherExperience> GetExperience(int id)
+        {
+            var get_All_ExpList = Db.Set<PhotoGrapherExperience>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            return get_All_ExpList;
+        }
 
 
+
+        //Add Experience
         public bool AddExperience(PhotoGrapherExperience Exp)
         {
-            throw new NotImplementedException();
+            Db.Set<PhotoGrapherExperience>().Add(Exp);
+            Db.SaveChanges();
+
+
+            return true;
+
         }
+
+        //Update Experience
+        public bool UpdateExperience(PhotoGrapherExperience ExpUpdate, int id)
+        {
+            var find_single_Exp = Db.Set<PhotoGrapherExperience>().Find(id);
+            if (find_single_Exp != null)
+            {
+
+                Db.Entry(ExpUpdate).State = EntityState.Modified;
+                Db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        #endregion
+
+
+        #region //Skill Region
+
+
+
+        #endregion
 
         public bool AddJobInterest(JobsInterested Interest)
         {
@@ -207,7 +249,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public bool AddSkill(PhotoGrapherSkills Add_Skill)
+        public bool AddSkill(PhotoGrapherSkill Add_Skill)
         {
             throw new NotImplementedException();
         }
@@ -237,10 +279,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PhotoGrapherExperience> GetExperience(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
        
 
@@ -249,7 +288,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PhotoGrapherSkills> GetSkill(int id)
+        public IEnumerable<PhotoGrapherSkill> GetSkill(int id)
         {
             throw new NotImplementedException();
         }
@@ -261,10 +300,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         
         
-        public bool UpdateExperience(PhotoGrapherExperience ExpUpdate, int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id)
         {
@@ -276,7 +312,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public bool UpdateSkill(PhotoGrapherSkills UpSkill, int id)
+        public bool UpdateSkill(PhotoGrapherSkill UpSkill, int id)
         {
             throw new NotImplementedException();
         }

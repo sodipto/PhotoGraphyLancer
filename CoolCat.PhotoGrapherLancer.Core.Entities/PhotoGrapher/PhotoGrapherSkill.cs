@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapherSkills
+   public class PhotoGrapherSkill
     {
         [Key]
         public int SkillsID { get; set; }

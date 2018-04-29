@@ -55,7 +55,7 @@
     <Compile Include="PhotoGrapher\PhotoUpload_Gallary.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherAward.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherExperience.cs" />
-    <Compile Include="PhotoGrapher\PhotoGrapherSkills.cs" />
+    <Compile Include="PhotoGrapher\PhotoGrapherSkill.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Basic_Profile.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Follower.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Following.cs" />
