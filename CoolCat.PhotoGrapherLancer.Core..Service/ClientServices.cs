@@ -58,11 +58,34 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
             return true;
         }
 
+        //Pass_Change Is Model Object This Objec Inside ClientID
         public bool ChangePassword(ChangePassword Pass_Change)
         {
+            //Find The Client Object
+            var obj = Db.Set<Client>().Where(a => a.ClientId == Pass_Change.ClientId).FirstOrDefault();
 
+            if (obj.Password == Pass_Change.CurrentPassword)
+            {
 
-            return true;
+                //new Password set
+                obj.Password = Pass_Change.NewPassword;
+
+                //Single Field Update
+                Db.Configuration.ValidateOnSaveEnabled = false;
+
+                Db.SaveChanges();
+                return true;
+            }
+
+            else
+            {
+
+                return false;
+
+            }
+            
+
+           
         }
 
 
