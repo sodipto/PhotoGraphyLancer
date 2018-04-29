@@ -18,7 +18,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<JobsInterested> JobsInteresteds { get; set; }
 
 
-       
+       //PhotoGrapher
+
 
     }
 }

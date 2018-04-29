@@ -131,10 +131,14 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
             return true;
         }
 
-       
+        //Interest PhotoGrapher List
         public IEnumerable<JobsInterested> GetAllInterest(int ClientID, int PostId)
         {
-            throw new NotImplementedException();
+            var InterestList_PhotoGrapher = Db.Set<JobsInterested>().Where(x => x.FkClientID == ClientID && x.FkJobsPostId == PostId).ToList();
+
+            return InterestList_PhotoGrapher;
+
+
         }
 
 
