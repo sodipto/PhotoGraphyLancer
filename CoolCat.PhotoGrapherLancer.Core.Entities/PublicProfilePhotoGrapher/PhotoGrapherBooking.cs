@@ -15,6 +15,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher
         public int Fk_Client_Id { get; set; }    //This Is The client Id From Client Table
 
 
+        public int Fk_PhotoGrapher_Id { get; set; }    //This Is The client Id From Client Table
+
+
         [Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
         public string Name { get; set; }
 

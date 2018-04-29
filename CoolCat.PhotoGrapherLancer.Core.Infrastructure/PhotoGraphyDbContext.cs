@@ -1,6 +1,7 @@
 ﻿using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
+using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -23,9 +24,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         //PhotoGrapher 
         public DbSet<PhotoGrapher> PhotoGraphers { get; set; }
 
+        //Client Book PhotoGrapher
+        public DbSet<PhotoGrapherBooking> PhotoGrapherBookings { get; set; }
+     
 
-
-       
 
 
 

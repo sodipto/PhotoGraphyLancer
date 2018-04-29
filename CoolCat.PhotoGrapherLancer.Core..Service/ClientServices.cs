@@ -9,10 +9,12 @@ using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System.Data.Entity;
 using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.ServiceModel;
+using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher_Profile_Interface;
+using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
 
 namespace CoolCat.PhotoGrapherLancer.Core._.Service
 {
-    public class ClientServices : IClientServices,IClientJobsPost_Services
+    public class ClientServices : IClientServices,IClientJobsPost_Services, IClientBooking_Service
     {
 
         DbContext Db;
@@ -169,6 +171,45 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
 
 
 
+        #endregion
+
+
+        #region //PhotoGrapher Booking Service
+        public IEnumerable<PhotoGrapherBooking> GelALLBooking()
+        {
+            return Db.Set<PhotoGrapherBooking>().ToList();
+        }
+
+        //PhotoGrapher All The List Who Is Booked
+        public IEnumerable<PhotoGrapherBooking> GetBooking(int id)
+        {
+            var BookingList = Db.Set<PhotoGrapherBooking>().Where(x => x.Fk_PhotoGrapher_Id == id).ToList();
+
+            return BookingList;
+        }
+
+        //CLient All The List Who Is Booked
+        public IEnumerable<PhotoGrapherBooking> GetBooking_Client_Show(int id)
+        {
+            var Client_BookingList = Db.Set<PhotoGrapherBooking>().Where(x => x.Fk_Client_Id == id).ToList();
+
+            return Client_BookingList;
+        }
+
+
+        public bool AddBooking(PhotoGrapherBooking Booked)
+        {
+            Db.Set<PhotoGrapherBooking>().Add(Booked);
+            Db.SaveChanges();
+            return true;
+        }
+
+
+        #endregion
+
+
+
+        #region //Client Conract PhotoGrapher
 
 
 
