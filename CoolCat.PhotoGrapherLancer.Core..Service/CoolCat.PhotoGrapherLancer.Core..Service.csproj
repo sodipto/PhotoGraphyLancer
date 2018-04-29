@@ -48,6 +48,10 @@
       <Project>{413f6c72-c9ff-4204-b57a-cdfdb840a26d}</Project>
       <Name>CoolCat.PhotoGrapherLancer.Core..Service.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core.Entities\CoolCat.PhotoGrapherLancer.Core.Entities.csproj">
+      <Project>{e27ba53c-cca9-4faa-ba2f-7362042aea30}</Project>
+      <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

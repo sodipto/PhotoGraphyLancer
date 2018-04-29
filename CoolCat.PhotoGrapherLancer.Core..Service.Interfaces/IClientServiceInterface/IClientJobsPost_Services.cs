@@ -18,7 +18,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
 
         //SinglePost
-
+        //This Id Job Post Id
         ClientJobsPost ClientPost(int id);
 
 
@@ -27,10 +27,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         bool AddJobsPost(ClientJobsPost jobspost);
 
-
-
-        //EditView
-        Client EditJobView(int id);
 
 
         //Edit
