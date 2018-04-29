@@ -29,6 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,6 +49,7 @@
     <Compile Include="IPublicPhotoGrapher_Profile_Interface\IClientBooking_Service.cs" />
     <Compile Include="IPublicPhotoGrapher_Profile_Interface\IClientContact_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModel\PhotoGrapherProfile_ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core.Entities\CoolCat.PhotoGrapherLancer.Core.Entities.csproj">
@@ -55,7 +57,6 @@
       <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

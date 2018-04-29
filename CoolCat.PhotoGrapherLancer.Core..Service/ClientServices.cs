@@ -8,7 +8,7 @@ using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System.Data.Entity;
-using CoolCat.PhotoGrapherLancer.Core.Service.ServiceModel;
+using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.ServiceModel;
 
 namespace CoolCat.PhotoGrapherLancer.Core._.Service
 {
@@ -151,16 +151,17 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
             return Db.Set<PhotoGraphyCatagory>().ToList();
         }
 
-        public IEnumerable<PhotoGrapher> GetAllPhotoGrapher()
-        {
-
-
-        }
-
-        public PhotoGrapher PhotoGrapherProfile(int id)
+        public IEnumerable<PhotoGrapherProfile_ViewModel> GetAllPhotoGrapher()
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<PhotoGrapherProfile_ViewModel> PhotoGrapherProfile(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
 
 
