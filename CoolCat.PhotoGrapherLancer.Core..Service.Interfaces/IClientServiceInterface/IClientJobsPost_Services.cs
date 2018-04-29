@@ -30,9 +30,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
 
         //Edit
-        bool EditJobsPost(Client editclient);
+        bool EditJobsPost(ClientJobsPost editPost);
 
 
+        
 
         //JobsInterest PhotoGrapherList by ClientID
 

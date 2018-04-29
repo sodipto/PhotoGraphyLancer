@@ -181,6 +181,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         #region //Jobs Interest
 
+        //Job Interest add
+
+        bool AddJobInterest(JobsInterested Interest);
+
         //All Jobs Interest 
         IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id);
 

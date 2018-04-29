@@ -14,8 +14,11 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<Client> Clients { get; set; }
         public DbSet<ClientJobsPost> ClientJobsPosts { get; set;}
 
+        //Job Interest/Applied
+        public DbSet<JobsInterested> JobsInteresteds { get; set; }
 
-        //
+
+       
 
     }
 }

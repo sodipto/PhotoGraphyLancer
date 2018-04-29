@@ -97,7 +97,9 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         //Get All Post By Client ID
         public IEnumerable<ClientJobsPost> GetALLPost(int id)
         {
-            throw new NotImplementedException();
+            var All_Obj_Post = Db.Set<ClientJobsPost>().Where(x => x.FkClientID == id).ToList();
+
+            return All_Obj_Post;
         }
 
 
@@ -105,30 +107,31 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         //Single Job Post
         public ClientJobsPost ClientPost(int id)
         {
-            throw new NotImplementedException();
+            var JobPostDetails= Db.Set<ClientJobsPost>().Where(x => x.PostId == id).FirstOrDefault();
+            return JobPostDetails;
         }
 
 
         //Add Post
         public bool AddJobsPost(ClientJobsPost jobspost)
         {
-            throw new NotImplementedException();
+            Db.Set<ClientJobsPost>().Add(jobspost);
+            Db.SaveChanges();
+            return true;
+
         }
 
 
-        //
-        public bool EditJobsPost(Client editclient)
+        //Edit JobsPost
+        public bool EditJobsPost(ClientJobsPost editPost)
         {
-            throw new NotImplementedException();
+
+            Db.Entry(editPost).State = EntityState.Modified;
+            Db.SaveChanges();
+            return true;
         }
 
-
-
-
-        
-
-        
-
+       
         public IEnumerable<JobsInterested> GetAllInterest(int ClientID, int PostId)
         {
             throw new NotImplementedException();
@@ -152,6 +155,8 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         {
             throw new NotImplementedException();
         }
+
+       
 
         #endregion
 
