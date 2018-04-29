@@ -26,9 +26,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
 
         //Client Book PhotoGrapher
         public DbSet<PhotoGrapherBooking> PhotoGrapherBookings { get; set; }
-     
 
 
+        //Client Contacr PhotoGrapher
+        public DbSet<ClientContact> ClientContacts { get; set; }
 
 
 

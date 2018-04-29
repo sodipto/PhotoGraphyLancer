@@ -18,7 +18,13 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
 
         //Get Contact By PhotoGrapher
 
-        ClientContact GetContact(int id);  //Get By PhotoGrapher ID/Client ID 
+        ClientContact GetContact_Details(int id);  //Get By Contact ID
+
+        //All Contact List By PhotoGrapher
+
+        IEnumerable<ClientContact> Get_All_PhotoGrapher_Contact(int id);
+
+
 
 
         //Client Details
