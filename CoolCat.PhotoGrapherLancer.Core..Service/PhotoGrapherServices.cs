@@ -227,8 +227,39 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
         #region //Skill Region
+        //Get All Skill
+        public IEnumerable<PhotoGrapherSkill> GetSkill(int id)
+        {
+            var get_All_SkillKist = Db.Set<PhotoGrapherSkill>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            return get_All_SkillKist;
+        }
+
+        //Add Skill
+        public bool AddSkill(PhotoGrapherSkill Add_Skill)
+        {
+            Db.Set<PhotoGrapherSkill>().Add(Add_Skill);
+            Db.SaveChanges();
 
 
+            return true;
+        }
+        
+         //Update Skill
+        public bool UpdateSkill(PhotoGrapherSkill UpSkill, int id)
+        {
+            var find_single_skill = Db.Set<PhotoGrapherSkill>().Find(id);
+            if (find_single_skill != null)
+            {
+
+                Db.Entry(UpSkill).State = EntityState.Modified;
+                Db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         #endregion
 
@@ -249,10 +280,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public bool AddSkill(PhotoGrapherSkill Add_Skill)
-        {
-            throw new NotImplementedException();
-        }
+       
 
 
         public IEnumerable<PriceDetail> GetAll(int id)
@@ -288,10 +316,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PhotoGrapherSkill> GetSkill(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
         {
@@ -312,10 +337,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-        public bool UpdateSkill(PhotoGrapherSkill UpSkill, int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public bool Update_Profile_Item(PhotoGrapher_Basic_Profile BasicAdd)
         {
