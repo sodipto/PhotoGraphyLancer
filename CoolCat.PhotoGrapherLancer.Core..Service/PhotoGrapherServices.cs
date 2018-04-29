@@ -263,6 +263,45 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #endregion
 
+        #region //Type Of Catagory
+
+       
+        //Get All Type PhotoGraphy 
+        public IEnumerable<PhotoGrapher_PhotoGraphy_Type> GetPhotoGraphy_Type(int id)
+        {
+            var get_All_type = Db.Set<PhotoGrapher_PhotoGraphy_Type>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            return get_All_type;
+        }
+
+        public bool AddPhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type Add_Type)
+        {
+            Db.Set<PhotoGrapher_PhotoGraphy_Type>().Add(Add_Type);
+            Db.SaveChanges();
+
+
+            return true;
+        }
+
+        public bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id)
+        {
+            var find_single_type = Db.Set<PhotoGrapher_PhotoGraphy_Type>().Find(id);
+            if (find_single_type != null)
+            {
+
+                Db.Entry(UpType).State = EntityState.Modified;
+                Db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+        #endregion
+
         public bool AddJobInterest(JobsInterested Interest)
         {
             throw new NotImplementedException();
@@ -270,10 +309,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
        
 
-        public bool AddPhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type Add_Type)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public bool AddPrice(PriceDetail Add_Price)
         {
@@ -311,11 +347,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
        
 
-        public IEnumerable<PhotoGrapher_PhotoGraphy_Type> GetPhotoGraphy_Type(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+       
        
 
         public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
@@ -327,11 +359,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         
         
 
-        public bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public bool UpdatePriceDetails(PriceDetail UpPrice)
         {
             throw new NotImplementedException();

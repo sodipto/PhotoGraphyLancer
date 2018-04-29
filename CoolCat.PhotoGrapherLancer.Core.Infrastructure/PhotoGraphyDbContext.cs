@@ -40,8 +40,11 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         //PhotoGrapher Experience
         public DbSet<PhotoGrapherExperience> PhotoGrapherExperiences { get; set; }
 
-        //PhotoGrapher Skill
+        //PhotoGrapher Skill 
         public DbSet<PhotoGrapherSkill> PhotoGrapherSkills { get; set; }
+
+        //PhotoGrapher Skill PhotoGrapher_PhotoGraphy_Type
+        public DbSet<PhotoGrapher_PhotoGraphy_Type> PhotoGrapher_PhotoGraphy_Types { get; set; }
 
 
 
