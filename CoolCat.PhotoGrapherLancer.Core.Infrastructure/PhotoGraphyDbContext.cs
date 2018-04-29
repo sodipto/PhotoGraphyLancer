@@ -25,6 +25,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
 
 
 
+       
 
 
 
