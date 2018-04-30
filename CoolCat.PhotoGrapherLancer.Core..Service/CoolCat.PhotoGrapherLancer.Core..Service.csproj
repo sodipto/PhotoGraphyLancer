@@ -49,11 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumService.cs" />
     <Compile Include="AuthenticationServices.cs" />
     <Compile Include="BookingService.cs" />
     <Compile Include="ClientServices.cs" />
     <Compile Include="ContactService.cs" />
     <Compile Include="JobPostService.cs" />
+    <Compile Include="PhotoGallaryService.cs" />
     <Compile Include="PhotoGrapherServices.cs" />
     <Compile Include="PhotoGrapherSocialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

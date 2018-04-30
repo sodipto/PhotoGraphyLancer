@@ -14,7 +14,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
         public int AlbamPhotoID { get; set; }
 
 
-        public int Fk_Albam_ID { get; set; }
+        public int Albam_ID { get; set; }
 
         public int Fk_PhotoGrapher_ID { get; set; }
 
