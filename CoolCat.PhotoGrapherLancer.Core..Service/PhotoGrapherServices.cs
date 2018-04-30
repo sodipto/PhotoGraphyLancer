@@ -153,8 +153,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         {
             Db.Set<PhotoGrapherAward>().Add(Add_Award);
             Db.SaveChanges();
-
-
             return true;
 
         }
@@ -264,24 +262,24 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
        
         //Get All Type PhotoGraphy 
-        public IEnumerable<PhotoGrapher_PhotoGraphy_Type> GetPhotoGraphy_Type(int id)
+        public IEnumerable<PhotoGrapherPhotoGraphyType> GetPhotoGraphy_Type(int id)
         {
-            var get_All_type = Db.Set<PhotoGrapher_PhotoGraphy_Type>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            var get_All_type = Db.Set<PhotoGrapherPhotoGraphyType>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
             return get_All_type;
         }
 
-        public bool AddPhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type Add_Type)
+        public bool AddPhotoGraphy_Type(PhotoGrapherPhotoGraphyType Add_Type)
         {
-            Db.Set<PhotoGrapher_PhotoGraphy_Type>().Add(Add_Type);
+            Db.Set<PhotoGrapherPhotoGraphyType>().Add(Add_Type);
             Db.SaveChanges();
 
 
             return true;
         }
 
-        public bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id)
+        public bool UpdatePhotoGraphy_Type(PhotoGrapherPhotoGraphyType UpType, int id)
         {
-            var find_single_type = Db.Set<PhotoGrapher_PhotoGraphy_Type>().Find(id);
+            var find_single_type = Db.Set<PhotoGrapherPhotoGraphyType>().Find(id);
             if (find_single_type != null)
             {
 

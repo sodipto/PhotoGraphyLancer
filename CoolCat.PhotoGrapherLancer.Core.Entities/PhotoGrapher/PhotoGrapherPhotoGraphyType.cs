@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapher_PhotoGraphy_Type
+   public class PhotoGrapherPhotoGraphyType
     {
 
         [Key]
-        public int TypeID { get; set; }
+        public int TypesID { get; set; }
 
 
         public int Fk_PhotoGrapher_ID { get; set; }
 
+        public int TypeID { get; set; } //Foreign Key From PhotoGraphyType Table
 
-        public string PhotoGraphyTypes { get; set; }
     }
 }

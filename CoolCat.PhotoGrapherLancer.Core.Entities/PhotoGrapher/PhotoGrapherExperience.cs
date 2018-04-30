@@ -10,13 +10,13 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
     public class PhotoGrapherExperience
     {
         [Key]
-        public int ExperienceID { get; set; }
+        public int Exp_ID { get; set; }
 
 
         public int Fk_PhotoGrapher_ID { get; set; }
 
 
-        public string Experiences { get; set; }
+        public int ExperienceID { get; set; } //ForeignKey From Experience Entites
 
 
     }

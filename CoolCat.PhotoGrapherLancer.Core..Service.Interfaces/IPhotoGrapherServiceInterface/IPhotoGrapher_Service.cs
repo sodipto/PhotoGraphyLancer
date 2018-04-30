@@ -103,16 +103,16 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
         //Add Experience
-        bool AddPhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type Add_Type);
+        bool AddPhotoGraphy_Type(PhotoGrapherPhotoGraphyType Add_Type);
 
         //Get Experience List By User Id
         //This The PhotoGrapher ID Fetch All Experience This Id And Reurn List
-        IEnumerable<PhotoGrapher_PhotoGraphy_Type> GetPhotoGraphy_Type(int id);
+        IEnumerable<PhotoGrapherPhotoGraphyType> GetPhotoGraphy_Type(int id);
 
 
         //Update View 
         //This Id Skill ID
-        bool UpdatePhotoGraphy_Type(PhotoGrapher_PhotoGraphy_Type UpType, int id);
+        bool UpdatePhotoGraphy_Type(PhotoGrapherPhotoGraphyType UpType, int id);
 
         #endregion
 

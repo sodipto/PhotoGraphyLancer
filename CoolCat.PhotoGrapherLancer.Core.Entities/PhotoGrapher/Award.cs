@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapherSkill
+    public  class Award
     {
         [Key]
-        public int SkillsID { get; set; }
+        public int AwardID { get; set; }
+
+        public string AwardName { get; set; }
 
 
-        public int Fk_PhotoGrapher_ID { get; set; }
 
-
-        public int SkillID { get; set; }  //Foreign Key from skill Table
     }
 }

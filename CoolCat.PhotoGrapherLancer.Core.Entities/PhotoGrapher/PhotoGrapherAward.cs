@@ -10,12 +10,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
      public class PhotoGrapherAward   //This Class Is The use for award/price compition
     {
         [Key]
-        public int AwardID { get; set; }
+        public int KeyAwardID { get; set; }
 
 
         public int Fk_PhotoGrapher_ID { get; set; }
 
-
-        public string Awards { get; set; }
+        //ForeignKey
+        public int AwardID { get; set; }
     }
 }

@@ -49,10 +49,13 @@
     <Compile Include="Client\JobsInterested.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="PhotoGrapher\AlbamPhoto.cs" />
+    <Compile Include="PhotoGrapher\Award.cs" />
+    <Compile Include="PhotoGrapher\Experience.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherChangePassword.cs" />
     <Compile Include="PhotoGrapher\Album.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Ratting.cs" />
+    <Compile Include="PhotoGrapher\PhotoGraphyType.cs" />
     <Compile Include="PhotoGrapher\PhotoUpload_Gallary.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherAward.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherExperience.cs" />
@@ -60,9 +63,10 @@
     <Compile Include="PhotoGrapher\PhotoGrapher_Basic_Profile.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Follower.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapher_Following.cs" />
-    <Compile Include="PhotoGrapher\PhotoGrapher_PhotoGraphy_Type.cs" />
+    <Compile Include="PhotoGrapher\PhotoGrapherPhotoGraphyType.cs" />
     <Compile Include="PhotoGrapher\PriceDetail.cs" />
     <Compile Include="PhotoGrapher\ProfilePicture.cs" />
+    <Compile Include="PhotoGrapher\Skill.cs" />
     <Compile Include="PhotoGraphyCatagory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicProfilePhotoGrapher\ClientContact.cs" />

@@ -48,7 +48,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<PhotoGrapherSkill> PhotoGrapherSkills { get; set; }
 
         //PhotoGrapher Skill PhotoGrapher_PhotoGraphy_Type
-        public DbSet<PhotoGrapher_PhotoGraphy_Type> PhotoGrapher_PhotoGraphy_Types { get; set; }
+        public DbSet<PhotoGrapherPhotoGraphyType> PhotoGrapher_PhotoGraphy_Types { get; set; }
 
 
         // PhotoGrapher PriceDetail Catagory
