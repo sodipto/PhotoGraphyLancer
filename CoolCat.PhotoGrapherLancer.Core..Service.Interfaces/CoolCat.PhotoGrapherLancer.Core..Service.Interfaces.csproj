@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenTication_Service_Interface\ILogin.cs" />
     <Compile Include="IClientServiceInterface\IClientJobsPost_Services.cs" />
     <Compile Include="IClientServiceInterface\IClientServices.cs" />
     <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapher_Album_Service.cs" />
@@ -57,6 +56,9 @@
       <Project>{e27ba53c-cca9-4faa-ba2f-7362042aea30}</Project>
       <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AuthenTication_Service_Interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
