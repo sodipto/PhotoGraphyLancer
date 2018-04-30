@@ -44,23 +44,16 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         //List of PhotoGraphy catagory
 
-        IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory();
+      //  IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory();
 
-        #region //PhotoGrapher Handle
+      
 
-        //All PhotoGrapher List
-
-        IEnumerable<PhotoGrapherProfile_ViewModel> GetAllPhotoGrapher();
-
-
-        //Single PhotoGrapherProfile
-
-       IEnumerable<PhotoGrapherProfile_ViewModel> PhotoGrapherProfile(int id);
+      
 
         
 
 
-        #endregion
+      
 
     }
 }

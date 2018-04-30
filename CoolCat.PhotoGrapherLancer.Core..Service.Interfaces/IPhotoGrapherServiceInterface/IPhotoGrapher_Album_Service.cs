@@ -13,10 +13,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         #region //Create Album
 
         //Get All Album by PhotoGrapherID
-        IEnumerable<CreateAlbum> GetALL(int id);
+        IEnumerable<Album> GetALL(int id);
 
         //Create Album
-        bool CreateAlbum(CreateAlbum create);
+        bool CreateAlbum(Album create);
 
         #endregion
 

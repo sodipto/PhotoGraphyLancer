@@ -14,7 +14,7 @@ using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
 
 namespace CoolCat.PhotoGrapherLancer.Core._.Service
 {
-    public class ClientServices : IClientServices,IClientJobsPost_Services, IClientBooking_Service, IClientContact_Service
+    public class ClientServices : IClientServices, IClientBooking_Service, IClientContact_Service
     {
 
         DbContext Db;
@@ -97,84 +97,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         #endregion
 
 
-        #region//Client Job Post Service
-        
-        //Get All Post By Client ID
-        public IEnumerable<ClientJobsPost> GetALLPost(int id)
-        {
-            var All_Obj_Post = Db.Set<ClientJobsPost>().Where(x => x.FkClientID == id).ToList();
-
-            return All_Obj_Post;
-        }
-
-
-
-        //Single Job Post
-        public ClientJobsPost ClientPost(int id)
-        {
-            var JobPostDetails= Db.Set<ClientJobsPost>().Where(x => x.PostId == id).FirstOrDefault();
-            return JobPostDetails;
-        }
-
-
-        //Add Post
-        public bool AddJobsPost(ClientJobsPost jobspost)
-        {
-            Db.Set<ClientJobsPost>().Add(jobspost);
-            Db.SaveChanges();
-            return true;
-
-        }
-
-
-        //Edit JobsPost
-        public bool EditJobsPost(ClientJobsPost editPost)
-        {
-
-            Db.Entry(editPost).State = EntityState.Modified;
-            Db.SaveChanges();
-            return true;
-        }
-
-        //Interest PhotoGrapher List
-        public IEnumerable<JobsInterested> GetAllInterest(int ClientID, int PostId)
-        {
-            var InterestList_PhotoGrapher = Db.Set<JobsInterested>().Where(x => x.FkClientID == ClientID && x.FkJobsPostId == PostId).ToList();
-
-            return InterestList_PhotoGrapher;
-
-
-        }
-
-
-        
-
-        //using viewmodel not possible service
-        public IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory()
-        {
-            return Db.Set<PhotoGraphyCatagory>().ToList();
-        }
-
-        //using viewmodel not possible service
-        public IEnumerable<PhotoGrapherProfile_ViewModel> GetAllPhotoGrapher()
-        {
-            throw new NotImplementedException();
-        }
-        //using viewmodel not possible service
-        public IEnumerable<PhotoGrapherProfile_ViewModel> PhotoGrapherProfile(int id)
-        {
-            //   PhotoGrapherProfile_ViewModel objALL = new PhotoGrapherProfile_ViewModel();
-
-            // objALL.Pt= Db.Set<PhotoGrapher>().ToList() ;
-
-
-
-            throw new NotImplementedException();
-        }
-
-
-
-        #endregion
+      
 
 
         #region //PhotoGrapher Booking Service

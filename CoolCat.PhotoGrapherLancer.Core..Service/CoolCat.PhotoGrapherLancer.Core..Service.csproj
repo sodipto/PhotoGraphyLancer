@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AuthenticationServices.cs" />
     <Compile Include="ClientServices.cs" />
+    <Compile Include="JobPostService.cs" />
     <Compile Include="PhotoGrapherServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

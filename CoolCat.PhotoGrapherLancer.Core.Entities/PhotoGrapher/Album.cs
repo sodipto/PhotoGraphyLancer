@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-    public class CreateAlbum
+    public class Album
     {
 
         public int AlbamID { get; set; }
