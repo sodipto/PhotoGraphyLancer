@@ -15,7 +15,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         //Get All Follower List By PhotoGrapher ID
         //Thsi id PhotoGrapher Id
 
-        IEnumerable<PhotoGrapher_Follower> GetAllFollowers(int id);
+        IEnumerable<PhotoGrapherFollower> GetAllFollowers(int id);
 
         //Count Total Followers
         //Thsi id PhotoGrapher Id
@@ -24,7 +24,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Save Followers
         //Check Condition 1 Client only one time Follow
-        bool AddFollowers(PhotoGrapher_Follower Flw); 
+        bool AddFollowers(PhotoGrapherFollower Flw); 
 
         #endregion
 
@@ -34,7 +34,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Get All Follower List By PhotoGrapher ID
         //Thsi id PhotoGrapher Id
-        IEnumerable<PhotoGrapher_Following> GetAllFollowing(int id);
+        IEnumerable<PhotoGrapherFollowing> GetAllFollowing(int id);
 
         //Count Total Followers
         //Thsi id PhotoGrapher Id
@@ -43,7 +43,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Save Following
         //Check Condition 1 Client only one time Follow
-        bool AddFollowing(PhotoGrapher_Following Flow);
+        bool AddFollowing(PhotoGrapherFollowing Flow);
 
         #endregion
 
@@ -62,7 +62,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Save Ratting
         //Check Condition 1 Client only one time Ratting Next Time Update
-        bool AddRatting(PhotoGrapher_Ratting Rat);
+        bool AddRatting(PhotoGrapherRatting Rat);
 
         #endregion 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapher_Basic_Profile
+   public class PhotoGrapherBasicProfile
     {
         [Key]
         public int ProfileID { get; set; }

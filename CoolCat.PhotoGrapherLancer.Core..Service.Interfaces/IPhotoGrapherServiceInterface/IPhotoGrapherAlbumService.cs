@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServiceInterface
 {
-    public interface IPhotoGrapher_Album_Service
+    public interface IPhotoGrapherAlbumService
     {
 
         #region //Create Album
@@ -35,27 +35,27 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
 
-        #region //Upload photo Gallary
+        #region //Upload photo to the Gallary
 
         //Get All Upload Photo By Photographer Id
         //This Id Is The PhotoGrapher Id 
-        IEnumerable<PhotoUpload_Gallary> Get_All_Gallary_Photo(int id);
+        IEnumerable<PhotoUploadGallary> Get_All_Gallary_Photo(int id);
 
         //client Show Public Gallary Photo only public Photo
-        IEnumerable<PhotoUpload_Gallary> Get_All_Gallary_Photo_Public(int id);
+        IEnumerable<PhotoUploadGallary> Get_All_Gallary_Photo_Public(int id);
 
         //Details Single Image
-        PhotoUpload_Gallary PhotoDetails(int photoId);
+        PhotoUploadGallary PhotoDetails(int photoId);
       
 
 
         //Upload Photo Gallary
-        bool Upload_Photo_Gallary(PhotoUpload_Gallary upload);
+        bool Upload_Photo_Gallary(PhotoUploadGallary upload);
 
 
         //Update when Image In Public or private
         //Only Update On field Shared Coloum public/Private
-        bool UpdateGallaryPhoto(PhotoUpload_Gallary UpdatePhoto);
+        bool UpdateGallaryPhoto(PhotoUploadGallary UpdatePhoto);
        
         #endregion
 

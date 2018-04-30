@@ -25,7 +25,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<PhotoGrapher> PhotoGraphers { get; set; }
 
         //PhotoGrapher_Basic_Profile
-        public DbSet<PhotoGrapher_Basic_Profile> PhotoGrapher_Basic_Profiles { get; set; }
+        public DbSet<PhotoGrapherBasicProfile> PhotoGrapherBasicProfiles { get; set; }
 
 
         //Client Book PhotoGrapher
@@ -73,14 +73,14 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
 
 
         //PhotoGrapher_Follower
-        public DbSet<PhotoGrapher_Follower> PhotoGrapher_Followers { get; set; }
+        public DbSet<PhotoGrapherFollower> PhotoGrapherFollowers { get; set; }
 
 
         //PhotoGrapher_Followings
-        public DbSet<PhotoGrapher_Following> PhotoGrapher_Followings { get; set; }
+        public DbSet<PhotoGrapherFollowing> PhotoGrapherFollowings { get; set; }
 
         //PhotoGrapher_Ratting
-        public DbSet<PhotoGrapher_Ratting> PhotoGrapher_Rattings { get; set; }
+        public DbSet<PhotoGrapherRatting> PhotoGrapherRattings { get; set; }
 
 
 

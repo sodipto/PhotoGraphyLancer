@@ -31,11 +31,11 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Basic PhotoGrapher Additional Profile Item Edit View
         //This Id Is photoGrapher Id
-        PhotoGrapher_Basic_Profile GetBasicProfile(int id);       
+        PhotoGrapherBasicProfile GetBasicProfile(int id);       
 
 
         //Add PhotoGrapher Additional Profile Item
-        bool Update_Profile_Item(PhotoGrapher_Basic_Profile BasicAdd);
+        bool Update_Profile_Item(PhotoGrapherBasicProfile BasicAdd);
 
 
         #endregion

@@ -7,16 +7,20 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 {
-   public class PhotoGrapher_Ratting
+   public class PhotoGrapherFollower
     {
-
         [Key]
-        public int RattingID { get; set; }      //Increment Automatic
+        public int FollowerID { get; set; }      //Increment Automatic
 
-        public double Ratting { get; set; }     //By Default Null Accepted
+        public int Followers { get; set; }     //By Default Null Accepted
 
-        public int Fk_Client_id { get; set; }  //which person Ratting
+        public int Fk_Client_id { get; set; }  //which person follow
 
         public int Fk_PhotoGrapher_ID { get; set; }   //Foreign Key From PhotoGrapher.cs
+
+
+
+
+
     }
 }

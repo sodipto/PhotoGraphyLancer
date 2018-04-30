@@ -339,13 +339,13 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #region //PhotoGrahper Basic Profile
 
-        public PhotoGrapher_Basic_Profile GetBasicProfile(int id)
+        public PhotoGrapherBasicProfile GetBasicProfile(int id)
         {
-            return Db.Set<PhotoGrapher_Basic_Profile>().Find(id);
+            return Db.Set<PhotoGrapherBasicProfile>().Find(id);
         }
 
         //Update By default All Field Null
-        public bool Update_Profile_Item(PhotoGrapher_Basic_Profile BasicAdd)
+        public bool Update_Profile_Item(PhotoGrapherBasicProfile BasicAdd)
         {
             Db.Entry(BasicAdd).State = EntityState.Modified;
             Db.SaveChanges();

@@ -24,16 +24,16 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #region //Follwers Region
 
-        public IEnumerable<PhotoGrapher_Follower> GetAllFollowers(int id)
+        public IEnumerable<PhotoGrapherFollower> GetAllFollowers(int id)
         {
-            return Db.Set<PhotoGrapher_Follower>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            return Db.Set<PhotoGrapherFollower>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
         }
 
         public int TotalFollowers(int id)
         {
             // int ratting=0;
 
-            var followers_list = Db.Set<PhotoGrapher_Follower>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            var followers_list = Db.Set<PhotoGrapherFollower>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
 
             var follower = followers_list.Sum(x => x.Followers);
 
@@ -41,9 +41,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             return follower;
         }
 
-        public bool AddFollowers(PhotoGrapher_Follower Flw)
+        public bool AddFollowers(PhotoGrapherFollower Flw)
         {
-            Db.Set<PhotoGrapher_Follower>().Add(Flw);
+            Db.Set<PhotoGrapherFollower>().Add(Flw);
             Db.SaveChanges();
 
 
@@ -56,14 +56,14 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #region //Following 
 
-        public IEnumerable<PhotoGrapher_Following> GetAllFollowing(int id)
+        public IEnumerable<PhotoGrapherFollowing> GetAllFollowing(int id)
         {
-            return Db.Set<PhotoGrapher_Following>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            return Db.Set<PhotoGrapherFollowing>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
         }
 
         public int TotalFollowing(int id)
         {
-            var following_list = Db.Set<PhotoGrapher_Following>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            var following_list = Db.Set<PhotoGrapherFollowing>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
 
             var following = following_list.Sum(x => x.Following);
 
@@ -71,9 +71,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             return following;
         }
 
-        public bool AddFollowing(PhotoGrapher_Following Flow)
+        public bool AddFollowing(PhotoGrapherFollowing Flow)
         {
-            Db.Set<PhotoGrapher_Following>().Add(Flow);
+            Db.Set<PhotoGrapherFollowing>().Add(Flow);
             Db.SaveChanges();
 
 
@@ -90,7 +90,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Total People Count
         public int Total_People_Ratting(int id)
         {
-            var Total_People_list = Db.Set<PhotoGrapher_Ratting>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            var Total_People_list = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
 
             var Total_People = Total_People_list.Sum(x => x.Fk_Client_id);
 
@@ -102,11 +102,11 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         {
             int Total_People = Total_People_Ratting(id);
 
-            var FiveStar_List = Db.Set<PhotoGrapher_Ratting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 5).ToList();
-            var FourStar_List = Db.Set<PhotoGrapher_Ratting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 4).ToList();
-            var ThreeStar_List = Db.Set<PhotoGrapher_Ratting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 3).ToList();
-            var TwoStar_List = Db.Set<PhotoGrapher_Ratting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 2).ToList();
-            var OneStar_List = Db.Set<PhotoGrapher_Ratting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 1).ToList();
+            var FiveStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 5).ToList();
+            var FourStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 4).ToList();
+            var ThreeStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 3).ToList();
+            var TwoStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 2).ToList();
+            var OneStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 1).ToList();
 
 
             int Five_Star_People_Sum = FiveStar_List.Sum(x => x.Fk_Client_id) * 5;
@@ -126,9 +126,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         }
 
         //Client Ratting Add
-        public bool AddRatting(PhotoGrapher_Ratting Rat)
+        public bool AddRatting(PhotoGrapherRatting Rat)
         {
-            Db.Set<PhotoGrapher_Ratting>().Add(Rat);
+            Db.Set<PhotoGrapherRatting>().Add(Rat);
             Db.SaveChanges();
 
 
