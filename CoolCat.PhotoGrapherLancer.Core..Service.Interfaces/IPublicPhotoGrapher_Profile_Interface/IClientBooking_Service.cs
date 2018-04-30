@@ -22,10 +22,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
         IEnumerable<PhotoGrapherBooking> GetBooking(int id);  //PhotoGrapher ID
 
 
-        //Client Details
-
-        Client GetClient(int id);  //Client Id Which Client Booking
-
         //Booking List By Client
         IEnumerable<PhotoGrapherBooking> GetBooking_Client_Show(int id);  //Client ID
 
