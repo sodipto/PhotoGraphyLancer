@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationServices.cs" />
     <Compile Include="ClientServices.cs" />
     <Compile Include="PhotoGrapherServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

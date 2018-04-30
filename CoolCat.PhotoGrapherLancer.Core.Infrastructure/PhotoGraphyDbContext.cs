@@ -57,6 +57,15 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
 
 
 
+        //PhotoGrapher_Follower
+        public DbSet<PhotoGrapher_Follower> PhotoGrapher_Followers { get; set; }
+
+
+        //PhotoGrapher_Followings
+        public DbSet<PhotoGrapher_Following> PhotoGrapher_Followings { get; set; }
+
+        //PhotoGrapher_Ratting
+        public DbSet<PhotoGrapher_Ratting> PhotoGrapher_Rattings { get; set; }
 
 
 

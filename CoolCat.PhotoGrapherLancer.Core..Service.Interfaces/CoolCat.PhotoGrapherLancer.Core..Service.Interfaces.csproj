@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenTication_Service_Interface\ILogin.cs" />
     <Compile Include="IClientServiceInterface\IClientJobsPost_Services.cs" />
     <Compile Include="IClientServiceInterface\IClientServices.cs" />
     <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapher_Album_Service.cs" />

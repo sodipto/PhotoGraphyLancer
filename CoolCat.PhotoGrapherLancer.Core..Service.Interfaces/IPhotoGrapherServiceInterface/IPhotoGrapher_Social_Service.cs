@@ -62,7 +62,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         //Save Ratting
         //Check Condition 1 Client only one time Ratting Next Time Update
-        bool AddRatting(PhotoGrapher_Following Rat);
+        bool AddRatting(PhotoGrapher_Ratting Rat);
 
         #endregion 
 

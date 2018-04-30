@@ -27,12 +27,13 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         }
 
         #region // Client Service
-
+        //Get All Client Fetch By Admin
         public IEnumerable<Client> GetallClient()
         {
             return Db.Set<Client>().ToList();
         }
 
+        //Single Client Details
         public Client GetClient(int id)
         {
             var obj_Client = Db.Set<Client>().Find(id);
@@ -41,6 +42,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         }
 
 
+        //Client Registration
         public bool AddClient(Client Newclient)
         {
             Db.Set<Client>().Add(Newclient);
@@ -52,7 +54,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         }
 
 
-
+        //Cliet Her Profile Update
         public bool EditClient(Client editclient)
         {
 
@@ -147,17 +149,18 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
 
         
 
-
+        //using viewmodel not possible service
         public IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory()
         {
             return Db.Set<PhotoGraphyCatagory>().ToList();
         }
 
+        //using viewmodel not possible service
         public IEnumerable<PhotoGrapherProfile_ViewModel> GetAllPhotoGrapher()
         {
             throw new NotImplementedException();
         }
-
+        //using viewmodel not possible service
         public IEnumerable<PhotoGrapherProfile_ViewModel> PhotoGrapherProfile(int id)
         {
             //   PhotoGrapherProfile_ViewModel objALL = new PhotoGrapherProfile_ViewModel();
@@ -175,6 +178,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
 
 
         #region //PhotoGrapher Booking Service
+        //get all Booking list
         public IEnumerable<PhotoGrapherBooking> GelALLBooking()
         {
             return Db.Set<PhotoGrapherBooking>().ToList();

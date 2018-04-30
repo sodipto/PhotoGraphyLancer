@@ -47,6 +47,7 @@
     <Compile Include="Client\ClientLogin .cs" />
     <Compile Include="Client\ClientResetPassword.cs" />
     <Compile Include="Client\JobsInterested.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="PhotoGrapher\AlbamPhoto.cs" />
     <Compile Include="PhotoGrapher\PhotoGrapherChangePassword.cs" />
     <Compile Include="PhotoGrapher\CreateAlbum.cs" />
@@ -67,11 +68,8 @@
     <Compile Include="PublicProfilePhotoGrapher\ClientContact.cs" />
     <Compile Include="PublicProfilePhotoGrapher\PhotoGrapherBooking.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Admin\Jummon.txt" />
-    <Content Include="PhotoGrapher\Akash.txt" />
-    <Content Include="PublicProfilePhotoGrapher\Projna.txt" />
+    <Folder Include="Admin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
