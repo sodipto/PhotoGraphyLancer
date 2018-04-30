@@ -171,25 +171,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         #region //Get All Jobs Post
 
-        //All Jobs Post
-        IEnumerable<ClientJobsPost> GetAll_Jobs_Post();
+      
 
-        //Get Client
-
-         Client GetClient(int id);
-
-        #endregion
-
-
-
-        #region //Jobs Interest
-
-        //Job Interest add
-
-        bool AddJobInterest(JobsInterested Interest);
-
-        //All Jobs Interest 
-        IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id);
+      
 
         #endregion
 

@@ -24,6 +24,14 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #region//Client Job Post Service
 
+        //Get All Job Post
+        public IEnumerable<ClientJobsPost> GetAll_Jobs_Post()
+        {
+            return Db.Set<ClientJobsPost>().ToList();
+        }
+
+
+
         //Get All Post By Client ID
         public IEnumerable<ClientJobsPost> GetALLPost(int id)
         {
@@ -31,6 +39,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
             return All_Obj_Post;
         }
+
+
+
 
 
 
@@ -70,6 +81,26 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
         }
+
+        //Get By PhotoGrapherID
+        public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
+        {
+            return Db.Set<JobsInterested>().Where(x => x.PhotoGrapherId == id).ToList();
+
+        }
+
+        //Job Interest Add
+        public bool AddJobInterest(JobsInterested Interest)
+        {
+            Db.Set<JobsInterested>().Add(Interest);
+            Db.SaveChanges();
+
+
+            return true;
+        }
+
+
+
 
         #endregion
 

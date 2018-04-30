@@ -76,11 +76,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
         #region //Profile Picture Region
-        //Get Client Details
-        public Client GetClient(int id)
-        {
-            return Db.Set<Client>().Find(id);
-        }
+       
 
         //Get All Profile Picture List PhotGrapher
         public IEnumerable<ProfilePicture> Get_All_ProfilePicture(int id)
@@ -341,37 +337,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #endregion
 
-
-
-
-
-        #region //Jobs Region
-
-
-        public IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id)
-        {
-            return Db.Set<JobsInterested>().Where(x => x.PhotoGrapherId == id).ToList();
-
-        }
-
-
-        public bool AddJobInterest(JobsInterested Interest)
-        {
-            Db.Set<JobsInterested>().Add(Interest);
-            Db.SaveChanges();
-
-
-            return true;
-        }
-
-
-
-        public IEnumerable<ClientJobsPost> GetAll_Jobs_Post()
-        {
-            return Db.Set<ClientJobsPost>().ToList();
-        }
-
-        #endregion
 
 
         #region //PhotoGrahper Basic Profile

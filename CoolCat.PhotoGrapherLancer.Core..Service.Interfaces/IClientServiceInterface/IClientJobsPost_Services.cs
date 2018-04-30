@@ -12,10 +12,17 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 {
      public  interface IClientJobsPost_Services
     {
+        //All Jobs Post
+        IEnumerable<ClientJobsPost> GetAll_Jobs_Post();
+
 
         //Get All Client Post(By Client Id)
 
         IEnumerable<ClientJobsPost> GetALLPost (int id);
+
+
+        //All Jobs Interest PhotoGrapher
+        IEnumerable<JobsInterested> Get_All_Jobs_Applied(int id);
 
 
         //SinglePost
@@ -34,7 +41,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
         bool EditJobsPost(ClientJobsPost editPost);
 
 
-        
+        //Job Interest add
+
+        bool AddJobInterest(JobsInterested Interest);
+
 
         //JobsInterest PhotoGrapherList by ClientID
 
@@ -42,9 +52,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
 
 
-        //List of PhotoGraphy catagory
-
-      //  IEnumerable<PhotoGraphyCatagory> GetALLPhotoCatagory();
 
       
 
