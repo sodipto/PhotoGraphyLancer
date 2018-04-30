@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
-using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.ServiceModel;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInterface
 {

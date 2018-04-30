@@ -8,7 +8,7 @@ using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System.Data.Entity;
-using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.ServiceModel;
+
 using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher_Profile_Interface;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
 
