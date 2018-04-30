@@ -35,32 +35,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
 
-        #region //Upload photo to the Gallary
-
-        //Get All Upload Photo By Photographer Id
-        //This Id Is The PhotoGrapher Id 
-        IEnumerable<PhotoUploadGallary> Get_All_Gallary_Photo(int id);
-
-        //client Show Public Gallary Photo only public Photo
-        IEnumerable<PhotoUploadGallary> Get_All_Gallary_Photo_Public(int id);
-
-        //Details Single Image
-        PhotoUploadGallary PhotoDetails(int photoId);
-      
-
-
-        //Upload Photo Gallary
-        bool Upload_Photo_Gallary(PhotoUploadGallary upload);
-
-
-        //Update when Image In Public or private
-        //Only Update On field Shared Coloum public/Private
-        bool UpdateGallaryPhoto(PhotoUploadGallary UpdatePhoto);
-       
-        #endregion
-
-
-
 
 
     }
