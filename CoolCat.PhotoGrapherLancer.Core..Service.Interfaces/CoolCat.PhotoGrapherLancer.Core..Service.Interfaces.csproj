@@ -44,8 +44,8 @@
     <Compile Include="IClientServiceInterface\IClientJobsPost_Services.cs" />
     <Compile Include="IClientServiceInterface\IClientServices.cs" />
     <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapherAlbumService.cs" />
-    <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapher_Service.cs" />
-    <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapher_Social_Service.cs" />
+    <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapherService.cs" />
+    <Compile Include="IPhotoGrapherServiceInterface\IPhotoGrapherSocialService.cs" />
     <Compile Include="IPublicPhotoGrapher_Profile_Interface\IClientBooking_Service.cs" />
     <Compile Include="IPublicPhotoGrapher_Profile_Interface\IClientContact_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

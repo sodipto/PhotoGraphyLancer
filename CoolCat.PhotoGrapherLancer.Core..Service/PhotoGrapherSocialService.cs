@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
-    public class PhotoGrapherSocialService : IPhotoGrapher_Social_Service
+    public class PhotoGrapherSocialService : IPhotoGrapherSocialService
     {
 
 

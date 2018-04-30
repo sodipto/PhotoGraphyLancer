@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServiceInterface
 {
-   public interface IPhotoGrapher_Social_Service
+   public interface IPhotoGrapherSocialService
     {
 
         #region //This Region Basically Follower 

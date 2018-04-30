@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServiceInterface
 {
-    public interface IPhotoGrapher_Service
+    public interface IPhotoGrapherService
     {
 
         #region // PhotoGrapher Basic Profile
