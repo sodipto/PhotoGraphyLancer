@@ -52,6 +52,7 @@
     <Compile Include="AuthenticationServices.cs" />
     <Compile Include="BookingService.cs" />
     <Compile Include="ClientServices.cs" />
+    <Compile Include="ContactService.cs" />
     <Compile Include="JobPostService.cs" />
     <Compile Include="PhotoGrapherServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

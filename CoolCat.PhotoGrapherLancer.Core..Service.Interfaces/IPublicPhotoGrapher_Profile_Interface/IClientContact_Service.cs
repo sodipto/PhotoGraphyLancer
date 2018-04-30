@@ -25,13 +25,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher
         IEnumerable<ClientContact> Get_All_PhotoGrapher_Contact(int id);
 
 
-
-
-        //Client Details
-
-        Client GetClient(int id);  //Client Id Which Client Details
-
-
         //Add Contact To The Database Table
 
         bool AddContact(ClientContact Add_Contact);
