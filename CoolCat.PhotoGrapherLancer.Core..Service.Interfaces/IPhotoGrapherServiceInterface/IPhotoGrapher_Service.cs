@@ -167,19 +167,6 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
         #endregion
 
-
-
-        #region //Get All Jobs Post
-
-      
-
-      
-
-        #endregion
-
-
-
-
         #region //Change Password
 
         //Password Change 

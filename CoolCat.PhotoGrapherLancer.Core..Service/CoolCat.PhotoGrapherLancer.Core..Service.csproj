@@ -55,6 +55,7 @@
     <Compile Include="ContactService.cs" />
     <Compile Include="JobPostService.cs" />
     <Compile Include="PhotoGrapherServices.cs" />
+    <Compile Include="PhotoGrapherSocialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
