@@ -1,0 +1,109 @@
+﻿@model IEnumerable<CoolCat.PhotoGrapherLancer.Core.Entities.Client.JobsInterested>
+
+@{
+    ViewBag.Title = "JobsInterestd";
+    Layout = "~/Views/Shared/_Layout_ClientPage.cshtml";
+}
+
+
+@section CSS{
+
+    <style type="text/css">
+        .toppad {
+            margin-top: 20px;
+        }
+    </style>
+
+}
+
+@*
+    <table class="table">
+   
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.InterestId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.InterestId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.InterestId })
+            </td>
+        </tr>
+    
+
+    </table>
+*@
+
+
+<div class="content-wrapper">
+    <div class="container">
+
+
+
+
+        <div class="row">
+
+
+
+
+            <div class="col-md-12 toppad">
+
+            
+              @foreach (var item in Model)
+              {
+                <div class="col-md-4">
+                    <!-- Widget: user widget style 1 -->
+                    <div class="box box-widget widget-user">
+                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                        <div class="widget-user-header bg-aqua-active">
+                            <h3 class="widget-user-username">Sodipto Saha</h3>
+                            <a href="/Client/PhotoGrapherProfile/@item.PhotoGrapherId" style="color:black;"> <h5 class="widget-user-desc">Visit Profile</h5></a>
+                        </div>
+                        <div class="widget-user-image">
+                            <img class="img-circle" src="~/Content/Component/dist/img/b.jpg" alt="User Avatar" style="max-height:90px;">
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-sm-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">12</h5>
+                                        <span class="description-text">Project</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-sm-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">750</h5>
+                                        <span class="description-text">FOLLOWERS</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-sm-4">
+                                    <div class="description-block">
+                                        <h5 class="description-header">3.5</h5>
+                                        <span class="description-text">Ratting</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                    <!-- /.widget-user -->
+                </div>
+              }
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- /.container -->
+</div>

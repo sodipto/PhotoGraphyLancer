@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +56,17 @@
     <Compile Include="BookingService.cs" />
     <Compile Include="ClientServices.cs" />
     <Compile Include="ContactService.cs" />
+    <Compile Include="EmailExistService.cs" />
     <Compile Include="JobPostService.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="PhotoGallaryService.cs" />
     <Compile Include="PhotoGrapherServices.cs" />
     <Compile Include="PhotoGrapherSocialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceViewModel\AppliedPostViewModel.cs" />
+    <Compile Include="ServiceViewModel\PhotoGrapherProfileViewModel.cs" />
+    <Compile Include="ServiceViewModel\VLogin.cs" />
+    <Compile Include="UsernameExistService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core..Service.Interfaces\CoolCat.PhotoGrapherLancer.Core..Service.Interfaces.csproj">
@@ -68,6 +76,10 @@
     <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core.Entities\CoolCat.PhotoGrapherLancer.Core.Entities.csproj">
       <Project>{e27ba53c-cca9-4faa-ba2f-7362042aea30}</Project>
       <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core.Infrastructure\CoolCat.PhotoGrapherLancer.Core.Infrastructure.csproj">
+      <Project>{c47fe2c8-f369-4987-a08c-f9eefbe5f119}</Project>
+      <Name>CoolCat.PhotoGrapherLancer.Core.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

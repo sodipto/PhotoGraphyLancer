@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
 using System.Data.Entity;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
     public class BookingService : IClientBooking_Service
     {
 
-        DbContext Db;
+        //DbContext Db;
 
-        public BookingService(DbContext context)
-        {
+        //public BookingService(DbContext context)
+        //{
 
-            Db = context;
+        //    Db = context;
 
-        }
+        //}
 
+        PhotoGraphyDbContext Db = new PhotoGraphyDbContext();
 
 
         #region //PhotoGrapher Booking Service

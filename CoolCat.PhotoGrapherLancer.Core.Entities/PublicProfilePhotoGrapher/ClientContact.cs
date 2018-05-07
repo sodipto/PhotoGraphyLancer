@@ -18,20 +18,24 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher
         public int Fk_ClientID { get; set; }  //Which Client Contact The PhotoGrapher
 
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
-        public string Name { get; set; }
+        //[Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
+        //public string Name { get; set; }
 
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Email is required")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [MinLength(11,ErrorMessage = "At Least 11"),MaxLength(14, ErrorMessage = "Maximum")]
+       // [Range(11, 11, ErrorMessage = "At Least 11 And Max 11")]
         public int? Phone { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Message is required")]
-        [MinLength(20,ErrorMessage = "Mimimum Type 20 character"),MaxLength(120, ErrorMessage = "Not Gretter Then 120 Character")]
+        //[MinLength(20,ErrorMessage = "Mimimum Type 20 character"),MaxLength(120, ErrorMessage = "Not Gretter Then 120 Character")]
         public String Message { get; set; }
+
+
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
+        public string Name { get; set; }
 
 
 

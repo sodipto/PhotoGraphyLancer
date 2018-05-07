@@ -13,7 +13,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 
         [Required(ErrorMessage = "CurrentPassword password required", AllowEmptyStrings = false)]
         [DataType(DataType.Password)]
-        [MinLength(6, ErrorMessage = "Minimum 6 characters required")]
+        //[MinLength(6, ErrorMessage = "Minimum 6 characters required")]
         public string CurrentPassword { get; set; }
 
         [Required(ErrorMessage = "New password required", AllowEmptyStrings = false)]

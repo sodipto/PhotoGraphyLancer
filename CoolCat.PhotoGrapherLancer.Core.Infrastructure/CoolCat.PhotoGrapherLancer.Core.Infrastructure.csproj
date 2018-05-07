@@ -55,12 +55,17 @@
     <Compile Include="PhotoGraphyDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core..Service.Interfaces\CoolCat.PhotoGrapherLancer.Core..Service.Interfaces.csproj">
+      <Project>{413f6c72-c9ff-4204-b57a-cdfdb840a26d}</Project>
+      <Name>CoolCat.PhotoGrapherLancer.Core..Service.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoolCat.PhotoGrapherLancer.Core.Entities\CoolCat.PhotoGrapherLancer.Core.Entities.csproj">
       <Project>{e27ba53c-cca9-4faa-ba2f-7362042aea30}</Project>
       <Name>CoolCat.PhotoGrapherLancer.Core.Entities</Name>

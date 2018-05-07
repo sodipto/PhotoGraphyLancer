@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServiceInterface
 {
@@ -16,7 +17,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         IEnumerable<Album> GetALL(int id);
 
         //Create Album
-        bool CreateAlbum(Album create);
+        bool CreateAlbum(Album create, HttpPostedFileBase File);
 
         #endregion
 
@@ -28,7 +29,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         IEnumerable<AlbamPhoto> GetAll_Albam_Photo(int AlbamId);
 
         //Add Albam Photo By Albam Id
-        bool Add_Albam_Photo(AlbamPhoto add);
+        bool Add_Albam_Photo(AlbamPhoto add, HttpPostedFileBase File);
 
 
         #endregion

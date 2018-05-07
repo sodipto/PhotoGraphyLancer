@@ -47,7 +47,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IClientServiceInter
 
         //JobsInterest PhotoGrapherList by ClientID
 
-        IEnumerable<JobsInterested> GetAllInterest(int ClientID,int PostId);  //individual client search by all post and interested
+        IEnumerable<JobsInterested> GetAllInterest(int PostId);  //individual client search by all post and interested
 
 
 

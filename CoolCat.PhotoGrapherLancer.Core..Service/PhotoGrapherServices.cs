@@ -7,21 +7,25 @@ using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System.Data.Entity;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
+using System.Web;
+using System.IO;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
     public class PhotoGrapherServices : IPhotoGrapherService
     {
+        PhotoGraphyDbContext Db = new PhotoGraphyDbContext();
 
 
-        DbContext Db;
+        //DbContext Db;
 
-        public PhotoGrapherServices(DbContext context)
-        {
+        //public PhotoGrapherServices(DbContext context)
+        //{
 
-            Db = context;
+        //    Db = context;
 
-        }
+        //}
 
 
         //Get All PhotoGrapher
@@ -36,11 +40,17 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             throw new NotImplementedException();
         }
 
-       //When Register PhotoGrapher Add
+        //When Register PhotoGrapher Add
         public bool AddPhotoGrapher(PhotoGrapher pht_Add)
         {
             Db.Set<PhotoGrapher>().Add(pht_Add);
+           // Add_basicProfile(pht_Add.Email);
             Db.SaveChanges();
+
+          
+
+
+
 
 
             return true;
@@ -76,12 +86,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
         #region //Profile Picture Region
-       
+
 
         //Get All Profile Picture List PhotGrapher
         public IEnumerable<ProfilePicture> Get_All_ProfilePicture(int id)
         {
-            return Db.Set<ProfilePicture>().ToList();
+            return Db.Set<ProfilePicture>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
         }
 
 
@@ -95,8 +105,18 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
         //Profile picture Change Add To Database 
-        public bool Add_Profile_Picture(ProfilePicture chng)
+        public bool Add_Profile_Picture(ProfilePicture chng, HttpPostedFileBase File, int id)
         {
+            string filename = Path.GetFileNameWithoutExtension(File.FileName);
+            string extension = Path.GetExtension(File.FileName);
+            filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
+            chng.ImagePath = "~/Content/Image/ProfileImage/" + filename;
+            filename = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/Image/ProfileImage/"), filename);
+            chng.Fk_PhotoGrapher_ID = id;
+            chng.status = "Deactive";
+            File.SaveAs(filename);
+
+
             Db.Set<ProfilePicture>().Add(chng);
             Db.SaveChanges();
 
@@ -107,15 +127,15 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Change Current Profile Picture
         public bool Active_Profile_Picture(int id, int PictureID)
         {
-            var set_Staus_check = Db.Set<ProfilePicture>().Where(x => x.Fk_PhotoGrapher_ID == id && x.status=="set").FirstOrDefault();
+            var set_Staus_check = Db.Set<ProfilePicture>().Where(x => x.Fk_PhotoGrapher_ID == id && x.status == "Deactive").FirstOrDefault();
             var Pht_Grapher = Db.Set<ProfilePicture>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Pf_ID == PictureID).FirstOrDefault();
 
             if (Pht_Grapher != null)
             {
 
                 //new Password set
-                Pht_Grapher.status = "set";//Present set Profile Picture
-                set_Staus_check.status = "unset"; //Previous which set Preset Unset
+                Pht_Grapher.status = "Deactive";//Present set Profile Picture
+                set_Staus_check.status = "Active"; //Previous which set Preset Unset
 
 
                 //Single Field Update
@@ -125,7 +145,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
                 return true;
 
 
-               
+
             }
 
             else
@@ -160,7 +180,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Award Update 
         public bool UpdateAward(PhotoGrapherAward UpAward, int id)
         {
-           var find_single_Award= Db.Set<PhotoGrapherAward>().Find(id);
+            var find_single_Award = Db.Set<PhotoGrapherAward>().Find(id);
             if (find_single_Award != null)
             {
 
@@ -238,8 +258,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
             return true;
         }
-        
-         //Update Skill
+
+        //Update Skill
         public bool UpdateSkill(PhotoGrapherSkill UpSkill, int id)
         {
             var find_single_skill = Db.Set<PhotoGrapherSkill>().Find(id);
@@ -260,7 +280,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
         #region //Type Of Catagory
 
-       
+
         //Get All Type PhotoGraphy 
         public IEnumerable<PhotoGrapherPhotoGraphyType> GetPhotoGraphy_Type(int id)
         {
@@ -318,6 +338,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
 
+
+
         public bool UpdatePriceDetails(PriceDetail UpPrice)
         {
             Db.Entry(UpPrice).State = EntityState.Modified;
@@ -347,17 +369,70 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Update By default All Field Null
         public bool Update_Profile_Item(PhotoGrapherBasicProfile BasicAdd)
         {
-            Db.Entry(BasicAdd).State = EntityState.Modified;
-            Db.SaveChanges();
-            return true;
+
+            var user = Db.PhotoGrapherBasicProfiles.Where(x => x.Fk_PhotoGrapher_ID == BasicAdd.Fk_PhotoGrapher_ID).FirstOrDefault();
+
+            if (user != null)
+            {
+
+                user.Fk_PhotoGrapher_ID = BasicAdd.Fk_PhotoGrapher_ID;
+                user.Education = BasicAdd.Education;
+                user.Address = BasicAdd.Address;
+                user.Phone = BasicAdd.Phone;
+                user.Notes = BasicAdd.Notes;
+
+                Db.SaveChanges();
+                return true;
+            }
+
+            else
+            {
+
+                return false;
+            }
+
+
+            // Db.Entry(BasicAdd).State = EntityState.Modified;
+
         }
+
+
+
+        public bool Add_basicProfile(int id)
+        {
+            var user = Db.PhotoGrapherBasicProfiles.Where(x => x.Fk_PhotoGrapher_ID ==id).FirstOrDefault();
+
+            
+
+            if (user == null)
+            {
+                PhotoGrapherBasicProfile p = new PhotoGrapherBasicProfile();
+                p.Fk_PhotoGrapher_ID =id;
+                p.Address = "";
+                p.Education = "";
+                p.Phone = "";
+
+                Db.PhotoGrapherBasicProfiles.Add(p);
+                Db.SaveChanges();
+                return true;
+            }
+
+            else
+            {
+
+                return false;
+            }
+
+        }
+
+
 
 
 
         #endregion
 
 
-       
+
 
     }
 }

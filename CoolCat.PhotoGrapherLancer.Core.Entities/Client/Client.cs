@@ -43,7 +43,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 
 
 
-        [MinLength(11, ErrorMessage = "Minimum 11 Digit"), MaxLength(11)]
+      //  [Range(11, 11, ErrorMessage = "At Least 11 And Max 11")]
         public int? Phone { get; set; }                 //Nullable Bydefault ?(nullable)
 
         public string Address { get; set; }              //NullAble Bydefault 
@@ -53,8 +53,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public string ImagePath { get; set; }            // NullAble Bydefault 
 
 
-
-        public virtual IEnumerable <ClientJobsPost> Client_Jobs_Post { get; set;}  //Indivisual Client Post
+        public  virtual List<ClientJobsPost> ClientJobsPosts { get; set;}  //Indivisual Client Post
 
 
     }

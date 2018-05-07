@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
 {
     public class JobsInterested
@@ -19,6 +20,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public int FkClientID { get; set; }     //Foreignkey from client Table
 
         public int PhotoGrapherId { get; set; }  //Foreignkey From PhotoGrapher Model
+
+
+       
 
 
 

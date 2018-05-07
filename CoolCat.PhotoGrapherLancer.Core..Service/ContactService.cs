@@ -6,20 +6,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
    public class ContactService: IClientContact_Service
     {
 
-        DbContext Db;
+        PhotoGraphyDbContext Db = new PhotoGraphyDbContext();
 
-        public ContactService(DbContext context)
-        {
+        //DbContext Db;
 
-            Db = context;
+        //public ContactService(DbContext context)
+        //{
 
-        }
+        //    Db = context;
+
+        //}
 
         #region //Client Contract PhotoGrapher
 

@@ -11,32 +11,28 @@ using System.Data.Entity;
 
 using CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPublicPhotoGrapher_Profile_Interface;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
 
 namespace CoolCat.PhotoGrapherLancer.Core._.Service
 {
     public class ClientServices : IClientServices
     {
 
-        DbContext Db;
+        PhotoGraphyDbContext Db = new PhotoGraphyDbContext();
 
-        public ClientServices(DbContext context)
-        {
 
-            Db=context;
-
-        }
-
+      
         #region // Client Service
         //Get All Client Fetch By Admin
         public IEnumerable<Client> GetallClient()
         {
-            return Db.Set<Client>().ToList();
+            return Db.Clients.ToList();
         }
 
         //Single Client Details
         public Client GetClient(int id)
         {
-            var obj_Client = Db.Set<Client>().Find(id);
+            var obj_Client = Db.Clients.Find(id);
 
             return obj_Client;
         }
@@ -45,7 +41,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         //Client Registration
         public bool AddClient(Client Newclient)
         {
-            Db.Set<Client>().Add(Newclient);
+            Db.Clients.Add(Newclient);
             Db.SaveChanges();
 
 
@@ -57,7 +53,14 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         //Cliet Her Profile Update
         public bool EditClient(Client editclient)
         {
+            //var client = Db.Clients.Where(x => x.ClientId == editclient.ClientId).FirstOrDefault();
 
+            //client.Name = editclient.Name;
+            //client.Phone = editclient.Phone;
+            //client.Address = editclient.Address;
+            //client.ImagePath = editclient.ImagePath;
+
+            //Db.Configuration.ValidateOnSaveEnabled = false;
             Db.Entry(editclient).State = EntityState.Modified;
             Db.SaveChanges();
             return true;
@@ -67,7 +70,7 @@ namespace CoolCat.PhotoGrapherLancer.Core._.Service
         public bool ChangePassword(ChangePassword Pass_Change)
         {
             //Find The Client Object
-            var obj = Db.Set<Client>().Where(a => a.ClientId == Pass_Change.ClientId).FirstOrDefault();
+            var obj = Db.Clients.Where(a => a.ClientId == Pass_Change.ClientId).FirstOrDefault();
 
             if (obj.Password == Pass_Change.CurrentPassword)
             {

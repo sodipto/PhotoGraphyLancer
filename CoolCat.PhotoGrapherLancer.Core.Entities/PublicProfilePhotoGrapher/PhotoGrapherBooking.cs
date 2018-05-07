@@ -26,7 +26,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PublicProfilePhotoGrapher
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [MinLength(11, ErrorMessage = "At Least 11"), MaxLength(14, ErrorMessage = "Maximum")]
+       // [ Range(11, 11, ErrorMessage = "At Least 11 And Max 11")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Phone Number  is required")]
         public int Phone { get; set; }
 

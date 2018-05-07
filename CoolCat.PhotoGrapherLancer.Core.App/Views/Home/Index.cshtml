@@ -66,7 +66,7 @@
 
     <!-- Styleswitcher
     ================================================== -->
-    <div class="colors-switcher">
+    @*<div class="colors-switcher">
         <a id="show-panel" class="hide-panel"><i class="fa fa-tint"></i></a>
         <ul class="colors-list">
             <li><a title="Light Red" onClick="setActiveStyleSheet('light-red'); return false;" class="light-red"></a></li>
@@ -79,7 +79,7 @@
 
         </ul>
 
-    </div>
+    </div>*@
     <!-- Styleswitcher End
     ================================================== -->
     <!-- Navigation -->
@@ -133,10 +133,17 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="Login.html">Login</a>
+                        <a class="page-scroll" href="/Account/Login">Login</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="Register.html">Register</a>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            SignUp
+
+                            <ul class="dropdown-menu" style="background-color: blue;">
+                                <li><a href="/Account/CreateAccount">Client</a></li>
+
+                                <li><a href="/Account/CreateAccountPhotoGrapher">PhotoGrapher</a></li>
+                            </ul>
                     </li>
                 </ul>
             </div>

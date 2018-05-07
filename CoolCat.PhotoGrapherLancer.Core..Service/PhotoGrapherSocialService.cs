@@ -6,21 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System.Data.Entity;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
     public class PhotoGrapherSocialService : IPhotoGrapherSocialService
     {
 
+        PhotoGraphyDbContext Db = new PhotoGraphyDbContext();
 
-        DbContext Db;
+        //DbContext Db;
 
-        public PhotoGrapherSocialService(DbContext context)
-        {
+        //public PhotoGrapherSocialService(DbContext context)
+        //{
 
-            Db = context;
+        //    Db = context;
 
-        }
+        //} 
 
         #region //Follwers Region
 
@@ -33,22 +35,35 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         {
             // int ratting=0;
 
-            var followers_list = Db.Set<PhotoGrapherFollower>().Where(x => x.Fk_PhotoGrapher_ID == id).ToList();
+            var followers_list = Db.Set<PhotoGrapherFollower>().Where(x => x.Fk_PhotoGrapher_ID == id).Count();
 
-            var follower = followers_list.Sum(x => x.Followers);
+        //    var follower = followers_list.Sum(x => x.Followers);
 
 
-            return follower;
+            return followers_list;
         }
 
         public bool AddFollowers(PhotoGrapherFollower Flw)
         {
-            Db.Set<PhotoGrapherFollower>().Add(Flw);
-            Db.SaveChanges();
+            var client = Db.PhotoGrapherFollowers.Where(x => x.Fk_Client_id == Flw.Fk_Client_id && x.Fk_PhotoGrapher_ID==Flw.Fk_PhotoGrapher_ID).SingleOrDefault();
 
+            if (client == null) { 
 
+                Db.Set<PhotoGrapherFollower>().Add(Flw);
+                Db.SaveChanges();
             return true;
-        }
+
+             }
+
+            else
+            {
+
+                return false;
+            }
+
+
+
+         }
 
 
 
@@ -100,39 +115,59 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Ratting ex:4.5
         public double TotalRatting(int id)
         {
-            int Total_People = Total_People_Ratting(id);
 
-            var FiveStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 5).ToList();
-            var FourStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 4).ToList();
-            var ThreeStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 3).ToList();
-            var TwoStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 2).ToList();
-            var OneStar_List = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id && x.Ratting == 1).ToList();
+            Double Result;
 
 
-            int Five_Star_People_Sum = FiveStar_List.Sum(x => x.Fk_Client_id) * 5;
-            int Four_Star_People_Sum = FiveStar_List.Sum(x => x.Fk_Client_id) * 4;
-            int three_Star_People_Sum = FiveStar_List.Sum(x => x.Fk_Client_id) * 3;
-            int Two_Star_People_Sum = FiveStar_List.Sum(x => x.Fk_Client_id) * 2;
-            int One_Star_People_Sum = FiveStar_List.Sum(x => x.Fk_Client_id) * 1;
+
+            var Total_People_list = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id).Count();
 
 
-            int sum_Star = Five_Star_People_Sum + Four_Star_People_Sum + three_Star_People_Sum + Two_Star_People_Sum + One_Star_People_Sum;
 
+            if (Total_People_list == 0)
+            {
 
-            Double Result = sum_Star / Total_People;
+                return 0.0;
+            }
 
+            else { 
+            var Ratting_total = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id).Sum(x => x.Ratting);
+
+           
+
+            Result =Math.Round(( Ratting_total / Total_People_list),1);
+
+            
+            
 
             return Result;
+            }
+
+
         }
 
         //Client Ratting Add
         public bool AddRatting(PhotoGrapherRatting Rat)
         {
-            Db.Set<PhotoGrapherRatting>().Add(Rat);
-            Db.SaveChanges();
+            var client = Db.PhotoGrapherRattings.Where(x => x.Fk_Client_id == Rat.Fk_Client_id && x.Fk_PhotoGrapher_ID==Rat.Fk_PhotoGrapher_ID).SingleOrDefault();
+
+            if (client == null)
+            {
+                Db.Set<PhotoGrapherRatting>().Add(Rat);
+                Db.SaveChanges();
 
 
-            return true;
+                return true;
+
+
+            }
+
+            else
+            {
+               
+                return false;
+            }
+           
         }
 
         #endregion

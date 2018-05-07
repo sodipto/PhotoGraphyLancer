@@ -12,7 +12,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
         [Key]
         public int FollowerID { get; set; }      //Increment Automatic
 
-        public int Followers { get; set; }     //By Default Null Accepted
+       // public int Followers { get; set; }     //By Default Null Accepted
 
         public int Fk_Client_id { get; set; }  //which person follow
 

@@ -6,20 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using System.Data.Entity;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
+using CoolCat.PhotoGrapherLancer.Core.Service.ServiceViewModel;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
     public class JobPostService : IClientJobsPost_Services
     {
+        PhotoGraphyDbContext Db = new PhotoGraphyDbContext();
 
-        DbContext Db;
+        //DbContext Db;
 
-        public JobPostService(DbContext context)
-        {
+        //public JobPostService(DbContext context)
+        //{
 
-            Db = context;
+        //    Db = context;
 
-        }
+        //}
 
 
         #region//Client Job Post Service
@@ -27,7 +30,10 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Get All Job Post
         public IEnumerable<ClientJobsPost> GetAll_Jobs_Post()
         {
-            return Db.Set<ClientJobsPost>().ToList();
+
+          //  var join = Db.ClientJobsPosts.Include(a => a.);
+
+            return Db.Set<ClientJobsPost>().Include("Clients").ToList();     //Join Use by navigation property
         }
 
 
@@ -35,7 +41,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         //Get All Post By Client ID
         public IEnumerable<ClientJobsPost> GetALLPost(int id)
         {
-            var All_Obj_Post = Db.Set<ClientJobsPost>().Where(x => x.FkClientID == id).ToList();
+            var All_Obj_Post = Db.Set<ClientJobsPost>().Include("Clients").Where(x => x.FkClientID == id).ToList();
 
             return All_Obj_Post;
         }
@@ -73,12 +79,40 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         }
 
         //Interest PhotoGrapher List
-        public IEnumerable<JobsInterested> GetAllInterest(int ClientID, int PostId)
+        public IEnumerable<JobsInterested> GetAllInterest(int PostId)
         {
-            var InterestList_PhotoGrapher = Db.Set<JobsInterested>().Where(x => x.FkClientID == ClientID && x.FkJobsPostId == PostId).ToList();
+            
+            var InterestList_PhotoGrapher = Db.Set<JobsInterested>().Where(x=>x.FkJobsPostId == PostId).ToList();
 
             return InterestList_PhotoGrapher;
 
+
+        }
+
+
+
+        //No Way Data Pass So I use View model
+        public IEnumerable<AppliedPostViewModel> GetApplied(int id)
+        {
+            List<ClientJobsPost> ClPost = Db.ClientJobsPosts.ToList();
+            List<JobsInterested> Jst = Db.JobsInteresteds.ToList();
+
+
+            var data = (from d in Jst
+                        join f in ClPost
+                        on d.FkJobsPostId equals f.PostId
+                        where d.PhotoGrapherId == id
+                        select new AppliedPostViewModel
+                        {
+
+                            JobPostList = f,
+                            JobInterestList = d
+
+
+
+                        }).ToList();
+
+            return data;
 
         }
 

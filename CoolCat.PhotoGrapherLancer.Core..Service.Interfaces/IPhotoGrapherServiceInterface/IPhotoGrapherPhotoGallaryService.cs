@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServiceInterface
 {
@@ -25,7 +26,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
 
 
         //Upload Photo Gallary
-        bool Upload_Photo_Gallary(PhotoUploadGallary upload);
+        bool Upload_Photo_Gallary(PhotoUploadGallary upload, HttpPostedFileBase File);
 
 
         //Update when Image In Public or private

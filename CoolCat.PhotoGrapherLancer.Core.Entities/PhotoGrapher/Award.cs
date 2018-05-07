@@ -14,6 +14,9 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 
         public string AwardName { get; set; }
 
+        public virtual List<PhotoGrapherAward> PhotoGrapherAwards { get; set; }  //Indivisual Client Post
+
+
 
 
     }

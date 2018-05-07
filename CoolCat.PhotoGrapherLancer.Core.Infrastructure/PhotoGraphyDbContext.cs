@@ -8,14 +8,17 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using static CoolCat.PhotoGrapherLancer.Core.Infrastructure.Program;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
 {
     public class PhotoGraphyDbContext:DbContext
     {
+
+        public DbSet<User> users { get; set;}
         //Client
         public DbSet<Client> Clients { get; set; }
-        public DbSet<ClientJobsPost> ClientJobsPosts { get; set;}
+        public DbSet<ClientJobsPost> ClientJobsPosts { get; set; }
 
         //Job Interest/Applied
         public DbSet<JobsInterested> JobsInteresteds { get; set; }
@@ -70,6 +73,20 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
         public DbSet<PriceDetail> PriceDetails { get; set; }
 
 
+        //PhotoGrapher Albam
+        public DbSet<Album> Albums { get; set; }
+
+        //PhotoGrapher Albam Photo
+        public DbSet<AlbamPhoto> AlbamPhoto { get; set; }
+
+
+        //PhotoGrapher Gallary  Photo
+        public DbSet<PhotoUploadGallary> PhotoUploadGallarys { get; set; }
+
+
+
+
+
 
 
         //PhotoGrapher_Follower
@@ -92,7 +109,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Infrastructure
 
 
 
-
+        //24 Tables
 
 
 

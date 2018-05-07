@@ -18,8 +18,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher
 
         public string Address { get; set; }
 
-        [MinLength(11, ErrorMessage = "Minimum 11 Digit"), MaxLength(11)]
-        public int?   Phone { get; set; }
+      //  [Range(11, 11, ErrorMessage = "At Least 11 And Max 11")]
+        public string   Phone { get; set; }
 
         public string Notes { get; set; }
 

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServiceInterface
 {
@@ -155,7 +156,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.Interfaces.IPhotoGrapherServic
         ProfilePicture CurrentProfilePicture(int id);
 
         //Add Profile Picture
-        bool Add_Profile_Picture(ProfilePicture chng);
+        bool Add_Profile_Picture(ProfilePicture chng, HttpPostedFileBase File, int id);
 
         //Active Profile Picture
         //This picture id update status (set) And This PhotoGrapher Other Profile Picture Status unset

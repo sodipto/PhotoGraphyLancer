@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public int PostId {get; set;}
 
         [Required]
+         [ForeignKey("Clients")]
         public int FkClientID { get; set; }  //This IsClientID  ForeignKey From Client Table
 
         [Required]
@@ -39,19 +41,18 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public string Address { get; set; }
 
 
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Email ID required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Email ID required")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
-        [MinLength(11, ErrorMessage = "Minimum 11 Digit"),MaxLength(11)]
         public int Phone { get; set; }
-        
 
 
 
-        public virtual Client client { get; set; }    //Which Client Post the Jobs Invidual
+        //[InverseProperty("ClientJobsPosts")]
+        public  Client Clients { get; set; }    //Which Client Post the Jobs Invidual
 
-
+       
     }
 }

@@ -6,19 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
 using System.Data.Entity;
+using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
+using System.Web;
+using System.IO;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
     public class PhotoGallaryService : IPhotoGrapherPhotoGallaryService
     {
 
+        PhotoGraphyDbContext Db=new PhotoGraphyDbContext();
 
-        DbContext Db;
+        //DbContext Db;
 
-        public PhotoGallaryService(DbContext context)
-        {
-            Db = context;
-        }
+        //public PhotoGallaryService(DbContext context)
+        //{
+        //    Db = context;
+        //}
 
 
         //Get All Gallary Photo By PhotoGrapher ID
@@ -45,8 +49,17 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
 
         //Add Photo
-        public bool Upload_Photo_Gallary(PhotoUploadGallary upload)
+        public bool Upload_Photo_Gallary(PhotoUploadGallary upload, HttpPostedFileBase File)
         {
+            string filename = Path.GetFileNameWithoutExtension(File.FileName);
+            string extension = Path.GetExtension(File.FileName);
+            filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
+            upload.ImagePath = "~/Content/Image/GallaryPhoto/" + filename;
+            filename = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/Image/GallaryPhoto/"), filename);
+            upload.Shared ="public";
+            File.SaveAs(filename);
+
+
             Db.Set<PhotoUploadGallary>().Add(upload);
             Db.SaveChanges();
             return true;
