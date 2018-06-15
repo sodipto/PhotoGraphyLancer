@@ -45,7 +45,20 @@
                         <!-- Profile Image -->
                         <div class="box box-primary">
                             <div class="box-body box-profile">
-                                <img class="profile-user-img img-responsive img-circle" src="@Url.Content(Model.p_Picture.ImagePath)" alt="User profile picture">
+
+                                @if (ViewBag.img!=null)
+                                {
+                                    <img class="profile-user-img img-responsive img-circle" src="@Url.Content(ViewBag.img)" alt="User profile picture">
+
+                                }
+
+                                else
+                                {
+
+
+                                    <img class="profile-user-img img-responsive img-circle" src="~/Content/Component/dist/img/default-50x50.gif" alt="No Image" style="height:90px;">
+                                }
+
 
                                 <h3 class="profile-username text-center">@Model.PhotoGrapher.FullName</h3>
 
@@ -289,7 +302,10 @@
                                 <div class="active tab-pane" id="activity">
                                     <!-- Post -->
 
-                                    @foreach (var item in Model.Gallary)
+                                    @if(Model.Gallary!=null)
+                                    {
+
+                                    foreach (var item in Model.Gallary)
                                     {
 
 
@@ -342,15 +358,18 @@
                                         </div>
                                     }
 
-                                    <div class="box-footer clearfix">
-                                        <ul class="pagination pagination-sm no-margin pull-right">
-                                            <li><a href="#">&laquo;</a></li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">&raquo;</a></li>
-                                        </ul>
-                                    </div>
+                                        <div class="box-footer clearfix">
+                                            <ul class="pagination pagination-sm no-margin pull-right">
+                                                <li><a href="#">&laquo;</a></li>
+                                                <li><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">&raquo;</a></li>
+                                            </ul>
+                                        </div>
+
+
+                                    }
                                 </div>
 
 
@@ -359,13 +378,14 @@
                                 <!-- /.tab-pane -->
                           <div class="tab-pane" id="PhotoGallary">
 
+                 
                               <div class="post clearfix">
 
                                 
 
 
                                         <div class="services">
-
+                                           
                                             @foreach (var item in Model.Gallary)
                                             {
 
@@ -387,13 +407,13 @@
                                                         </figcaption>
                                                     </figure>
                                                 </div>
-                                            }
+                                                }
 
 
                                         </div>
 
 
-                                        @*<div class="box-footer clearfix">
+                                        <div class="box-footer clearfix">
                                             <ul class="pagination pagination-sm no-margin pull-right">
                                                 <li><a href="#">&laquo;</a></li>
                                                 <li><a href="#">1</a></li>
@@ -401,10 +421,12 @@
                                                 <li><a href="#">3</a></li>
                                                 <li><a href="#">&raquo;</a></li>
                                             </ul>
-                                        </div>*@
+                                        </div>
+
 
                                     </div>
 
+                                           
                                 </div>
 
                                 <!--startPortFolio Tab-->
@@ -422,8 +444,8 @@
                                         <!-- /.user-block -->
                                         <div class="clearfix">
 
-
-                                            @foreach (var item in Model.Albams)
+@if(Model.Albams!=null){
+                                            foreach (var item in Model.Albams)
 
                                             {
 
@@ -455,7 +477,7 @@
 
 
 
-
+                                            }
 
 
 
@@ -475,6 +497,7 @@
                                 <div class="tab-pane" id="Price">
 
                                     <div class="box container">
+                                        @if (Model.priceDetail!=null) { 
                                         <div class="box-header with-border">
                                             <h3 class="box-title">Photography Catagory Price Details</h3>
                                         
@@ -491,6 +514,7 @@
                                                         <th style="width: 40px">Price</th>
                                                         
                                                     </tr>
+
                                                     @foreach (var item in Model.priceDetail)
                                                     {
 
@@ -524,6 +548,7 @@
                                                 <li><a href="#">&raquo;</a></li>
                                             </ul>
                                         </div>
+                                        }
                                     </div>
 
                                 </div>

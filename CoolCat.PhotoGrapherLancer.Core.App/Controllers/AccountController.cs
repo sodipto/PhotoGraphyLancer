@@ -156,7 +156,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
                     
                     if (string.Compare(login.Password, v.Password) == 0)
                     {
-                        int timeout = login.RememberMe ? 2 : 5; 
+                        int timeout = login.RememberMe ? 2 : 3; 
                         var ticket = new FormsAuthenticationTicket(login.EmailID, login.RememberMe, timeout);
                         string encrypted = FormsAuthentication.Encrypt(ticket);
                         var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
@@ -194,7 +194,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
 
                     if (string.Compare(login.Password, p.Password) == 0)
                     {
-                        int timeout = login.RememberMe ? 2 : 1; 
+                        int timeout = login.RememberMe ? 2 : 5; 
                         var ticket = new FormsAuthenticationTicket(login.EmailID, login.RememberMe, timeout);
                         string encrypted = FormsAuthentication.Encrypt(ticket);
                         var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);

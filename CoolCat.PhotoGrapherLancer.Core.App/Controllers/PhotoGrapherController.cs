@@ -73,7 +73,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
 
 
                 ViewBag.PhotoGrapherId = PhotoGrapherID;
-                var JobList=jb.GetAll_Jobs_Post();
+               
+                var JobList=jb.GetAll_Jobs_Post_P(PhotoGrapherID);
                  
 
             return View(JobList);
@@ -573,8 +574,72 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
         }
 
 
+        [HttpGet]
+        public ActionResult GallaryStatus(int id)
+        {
+
+            var status_Check = Db.PhotoUploadGallarys.Where(x => x.PhotoID == id).FirstOrDefault();
+
+            if(status_Check.Shared== "public")
+            {
+                status_Check.Shared = "private";
+
+            }
+
+            else
+            {
+
+                status_Check.Shared = "public";
+
+            }
+
+            Db.Configuration.ValidateOnSaveEnabled = false;
+
+            Db.SaveChanges();
 
 
+            return Redirect(HttpContext.Request.UrlReferrer.AbsoluteUri);
+
+        }
+
+
+        [HttpPost]
+        public JsonResult AlbamStatus(int albamid)
+        {
+
+
+            var st = Db.Albums.Where(x => x.AlbamID == albamid).FirstOrDefault();
+
+
+
+
+            if (st.Status == "Public")
+            {
+
+                st.Status = "Private";
+
+            }
+
+            else {
+
+                st.Status = "Public";
+
+            }
+
+
+
+            Db.Configuration.ValidateOnSaveEnabled = false;
+
+            Db.SaveChanges();
+
+
+
+
+            return  Json(new { Data = st.Status });
+
+           
+
+        }
 
 
 

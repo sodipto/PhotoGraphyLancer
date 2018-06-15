@@ -1,4 +1,6 @@
-﻿@model IEnumerable<CoolCat.PhotoGrapherLancer.Core.Entities.Client.JobsInterested>
+﻿@*@model IEnumerable<CoolCat.PhotoGrapherLancer.Core.Entities.Client.JobsInterested>*@
+@model IEnumerable<CoolCat.PhotoGrapherLancer.Core.Service.ServiceViewModel.JobsInterestedListViewModel>
+
 
 @{
     ViewBag.Title = "JobsInterestd";
@@ -52,11 +54,23 @@
                     <div class="box box-widget widget-user">
                         <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget-user-header bg-aqua-active">
-                            <h3 class="widget-user-username">Sodipto Saha</h3>
-                            <a href="/Client/PhotoGrapherProfile/@item.PhotoGrapherId" style="color:black;"> <h5 class="widget-user-desc">Visit Profile</h5></a>
+                            <h3 class="widget-user-username">@item.photographer.FullName</h3>
+                            <a href="/Client/PhotoGrapherProfile/@item.photographer.PhotoGrapherId" style="color:black;"> <h5 class="widget-user-desc">Visit Profile</h5></a>
                         </div>
                         <div class="widget-user-image">
-                            <img class="img-circle" src="~/Content/Component/dist/img/b.jpg" alt="User Avatar" style="max-height:90px;">
+                            @if (item.profilepicture!=null)
+                            {
+
+                                <img class="img-circle" src="@Url.Content(item.profilepicture.ImagePath)" alt="User Avatar" style="max-height:90px;">
+                            }
+
+                            else
+                            {
+
+                                <img class="img-circle" src="~/Content/Component/dist/img/default-50x50.gif" alt="No Image" style="height:90px;">
+
+                            }
+
                         </div>
                         <div class="box-footer">
                             <div class="row">
@@ -70,7 +84,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-4 border-right">
                                     <div class="description-block">
-                                        <h5 class="description-header">750</h5>
+                                        <h5 class="description-header">@item.follower</h5>
                                         <span class="description-text">FOLLOWERS</span>
                                     </div>
                                     <!-- /.description-block -->
@@ -78,7 +92,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-4">
                                     <div class="description-block">
-                                        <h5 class="description-header">3.5</h5>
+                                        <h5 class="description-header">@item.ratting</h5>
                                         <span class="description-text">Ratting</span>
                                     </div>
                                     <!-- /.description-block -->

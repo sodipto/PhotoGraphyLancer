@@ -8,6 +8,8 @@ using CoolCat.PhotoGrapherLancer.Core.Entities.Client;
 using System.Data.Entity;
 using CoolCat.PhotoGrapherLancer.Core.Infrastructure;
 using CoolCat.PhotoGrapherLancer.Core.Service.ServiceViewModel;
+using CoolCat.PhotoGrapherLancer.Core.Entities.PhotoGrapher;
+using CoolCat.PhotoGrapherLancer.Core.Service;
 
 namespace CoolCat.PhotoGrapherLancer.Core.Service
 {
@@ -31,11 +33,36 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         public IEnumerable<ClientJobsPost> GetAll_Jobs_Post()
         {
 
-          //  var join = Db.ClientJobsPosts.Include(a => a.);
+            
+           
+            
 
+                 
+
+            
             return Db.Set<ClientJobsPost>().Include("Clients").ToList();     //Join Use by navigation property
         }
 
+
+        public IEnumerable<ClientJobsPost> GetAll_Jobs_Post_P(int photographerid)
+        {
+
+           // var appliedpost_user = Db.JobsInteresteds.Where(x => x.PhotoGrapherId == 1).ToList();
+
+
+
+
+
+
+
+            return Db.Set<ClientJobsPost>().Include("Clients").Where(x => !Db.JobsInteresteds.Any(f => f.FkJobsPostId == x.PostId && f.PhotoGrapherId == photographerid)).ToList();     //Join Use by navigation property
+        }
+
+
+
+
+
+        //get All job post photographer except applied post
 
 
         //Get All Post By Client ID
@@ -79,12 +106,48 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         }
 
         //Interest PhotoGrapher List
-        public IEnumerable<JobsInterested> GetAllInterest(int PostId)
+        public IEnumerable<JobsInterestedListViewModel> GetAllInterest(int PostId)
         {
-            
-            var InterestList_PhotoGrapher = Db.Set<JobsInterested>().Where(x=>x.FkJobsPostId == PostId).ToList();
 
-            return InterestList_PhotoGrapher;
+            //  var InterestList_PhotoGrapher = Db.Set<JobsInterested>().Where(x=>x.FkJobsPostId == PostId).ToList();
+
+            // return InterestList_PhotoGrapher;
+            PhotoGrapherSocialService socialservice = new PhotoGrapherSocialService();
+            PhotoGrapherServices pt = new PhotoGrapherServices();
+
+
+
+            List<PhotoGrapher> pht = Db.PhotoGraphers.ToList();
+            List<JobsInterested> interest = Db.JobsInteresteds.ToList();
+           
+
+            var data = (from p in pht
+                        join j in interest
+                        on p.PhotoGrapherId equals j.PhotoGrapherId
+                        //
+                        where j.FkJobsPostId == PostId
+                        select new JobsInterestedListViewModel
+                        {
+                            photographer=p,
+                            jobinterest=j,
+
+                            //here function call total follower get by photographerid
+                            follower= socialservice.TotalFollowers(p.PhotoGrapherId),
+
+                            //here function call ratting get photographer
+                            ratting=socialservice.TotalRatting(p.PhotoGrapherId),
+
+
+                            profilepicture=pt.CurrentProfilePicture(p.PhotoGrapherId)
+
+                        }).ToList();
+                      
+                      
+                      
+                      
+                     
+
+                return data;
 
 
         }
@@ -96,6 +159,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         {
             List<ClientJobsPost> ClPost = Db.ClientJobsPosts.ToList();
             List<JobsInterested> Jst = Db.JobsInteresteds.ToList();
+          
 
 
             var data = (from d in Jst

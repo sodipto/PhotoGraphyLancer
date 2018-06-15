@@ -64,6 +64,7 @@
     <Compile Include="PhotoGrapherSocialService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceViewModel\AppliedPostViewModel.cs" />
+    <Compile Include="ServiceViewModel\JobsInterestedListViewModel.cs" />
     <Compile Include="ServiceViewModel\PhotoGrapherProfileViewModel.cs" />
     <Compile Include="ServiceViewModel\VLogin.cs" />
     <Compile Include="UsernameExistService.cs" />

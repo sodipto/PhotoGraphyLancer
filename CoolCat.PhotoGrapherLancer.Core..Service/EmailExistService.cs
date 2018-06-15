@@ -18,7 +18,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
 
             var client = Db.Clients.Where(x => x.Email == email).FirstOrDefault();
 
-            return client != null;
+            return client!= null;
 
            
         }

@@ -95,10 +95,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         }
 
 
-        //Current Profile Picture Show
+        //Current Profile Picture Show 
         public ProfilePicture CurrentProfilePicture(int id)
         {
-            var Change_Profile_Picture = Db.Set<ProfilePicture>().Where(x => x.Fk_PhotoGrapher_ID == id && x.status == "set").FirstOrDefault();
+            var Change_Profile_Picture = Db.Set<ProfilePicture>().Where(x => x.Fk_PhotoGrapher_ID == id && x.status == "Deactive").FirstOrDefault();
+
+           
             return Change_Profile_Picture;
 
         }
@@ -133,7 +135,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             if (Pht_Grapher != null)
             {
 
-                //new Password set
+                //new  set
                 Pht_Grapher.status = "Deactive";//Present set Profile Picture
                 set_Staus_check.status = "Active"; //Previous which set Preset Unset
 

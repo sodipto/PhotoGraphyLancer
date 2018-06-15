@@ -28,7 +28,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service.ServiceViewModel
         public List<Album> Albams { get; set; }
         public List<AlbamPhoto> AlbamPhotos { get; set; }
         public List<PhotoUploadGallary> Gallary { get; set;}
-        public ProfilePicture p_Picture { get; set; }
+        public ProfilePicture  p_Picture { get; set; }
         public List<PriceDetail> priceDetail { get; set;}
 
         public List<ProfilePicture>ProfilepictureList { get; set; }

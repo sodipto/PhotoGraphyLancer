@@ -156,12 +156,28 @@ desired effect
 
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="../../Content/Component/dist/img/b.jpg" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>@System.Web.HttpContext.Current.Session["FullName"]</p>
-                        <!-- Status -->
+                   
+                        @*
+                            <div class="pull-left image">
+                            <img src="../../Content/Component/dist/img/b.jpg" class="img-circle" alt="User Image">
+
+                            </div>
+
+
+                            <div class="pull-right info">
+                               <h3 style="color:white;">@System.Web.HttpContext.Current.Session["FullName"]</h3>
+
+                                 <a href="/PhotoGrapher/Profile"><i class="fa fa-circle text-success"></i>Profile</a>
+                            </div>
+
+
+
+                       *@
+
+
+                    <div align="center" >
+                        <h3 style="color:white;">@System.Web.HttpContext.Current.Session["FullName"]</h3>
+                      
                         <a href="/PhotoGrapher/Profile"><i class="fa fa-circle text-success"></i>Profile</a>
                     </div>
                 </div>

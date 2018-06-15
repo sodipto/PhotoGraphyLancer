@@ -113,13 +113,14 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
         }
 
         //Ratting ex:4.5
+        //This is the method Ratting calculate photographer
         public double TotalRatting(int id)
         {
 
             Double Result;
 
 
-
+            //Get Number of people this photographer ratting
             var Total_People_list = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id).Count();
 
 
@@ -131,6 +132,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
             }
 
             else { 
+
+                //Total Summation of Ratting
             var Ratting_total = Db.Set<PhotoGrapherRatting>().Where(x => x.Fk_PhotoGrapher_ID == id).Sum(x => x.Ratting);
 
            

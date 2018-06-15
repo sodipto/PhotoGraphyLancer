@@ -47,10 +47,10 @@
                          }
 
 
-
                          else
                          {
 
+                                <img class="profile-user-img img-responsive img-circle" src="~/Content/Component/dist/img/default-50x50.gif" alt="No Image" style="height:90px;">
                             
 
 
@@ -361,10 +361,31 @@
 
 
                                             <p>
+                                               @using (Html.BeginForm("GallaryStatus", "PhotoGrapher", FormMethod.Get))
+                                               {
 
-                                                <a href="#">@item.Shared</a>
-                                                <a href="/PhotoGrapher/PhotoDetails/@item.PhotoID">Details</a>
-                                                <a href="@item.PhotoID">Delete</a>
+                                               if (@item.Shared == "public")
+                                               {
+                                                <a href="/PhotoGrapher/GallaryStatus/@item.PhotoID">Private</a>
+                                               }
+
+                                               else
+                                               {
+
+                                                <a href="/PhotoGrapher/GallaryStatus/@item.PhotoID">PUBLIC</a>
+
+                                               }
+
+
+                                                 <a href = "/PhotoGrapher/PhotoDetails/@item.PhotoID" > Details </a >
+
+
+                                                  <a href = "@item.PhotoID" > Delete </a>
+
+                                               }
+                                                   @*<input type="submit" class="btn btn-success" text="@item.Shared"/>*@
+
+                                              
                                             </p>
                                         </figcaption>
                                     </figure>
@@ -396,7 +417,7 @@
                             <div class="user-block">
                                 <img class="img-circle img-bordered-sm" src="~/Content/Component/dist/img/user6-128x128.jpg" alt="User Image">
                                 <span class="username">
-                                    <a href="#">Adam Jones</a>
+                                    <a href="#">Sodipto Saha</a>
 
                                 </span>
                                 <span class="description">Posted 5 photos - 5 days ago</span>
@@ -409,6 +430,8 @@
 
                                 {
 
+                                 
+
                                     //using (Html.BeginForm("", "", FormMethod.Post))
                                     //{
 
@@ -416,16 +439,33 @@
                                             <div class="col-md-6">
                                                 <figure class="snip1174 navy col-md-6">
 
-                                                    <img src="@Url.Content(item.ImagePath)" alt="sq-sample33" style="max-height:240px; max-width:368px;"/>
+                                                    <img src="@Url.Content(item.ImagePath)" alt="sq-sample33" style="height:275px; width:368px;"/>
                                                     <figcaption>
 
+                                                        @if (@item.Status == "Public")
+                                                        {
+                                                            <button class="btn btn-success status_btn" onclick="my(@item.AlbamID)">Private</button>
 
-                                                        <button class="btn btn-success">@item.Status</button>
+                                                        }
+
+                                                        else
+                                                        {
+
+
+                                                            <button class="btn btn-success status_btn" onclick="my(@item.AlbamID)">Public</button>
+
+
+                                                        }
+
+
+
+
                                                         <input type="hidden" name="PID" value="@item.AlbamID" />
                                                     </figcaption>
                                                 </figure>
                                                 <div class="caption">
                                                     <a href="/PhotoGrapher/AlbamPhotos/@item.AlbamID?AlbamName=@item.Caption">@item.Caption</a>
+                                                    @*<input type="hidden" id="p" value="@item.AlbamID" />*@
                                                 </div>
                                                 
                                             </div>
@@ -1033,24 +1073,85 @@
          <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
         
         
-      <script type="text/javascript"> $(function () {
+      <script type="text/javascript">
 
-     var Rattingvalue = JSON.parse('@Html.Raw(PhotoGrapherRatting)');
+          $(function () {
+
+             var Rattingvalue = JSON.parse('@Html.Raw(PhotoGrapherRatting)');
 
     
-  $("#rateYo").rateYo({
-      rating: Rattingvalue,
-      halfStar: true
-  });
+          $("#rateYo").rateYo({
+              rating: Rattingvalue,
+              halfStar: true
+          });
 
 
-    $("#rateYoadd").rateYo({
-    rating: 0.0
+            $("#rateYoadd").rateYo({
+            rating: 0.0
 
 
-  });
+          });
 
 
 });
         </script>;
+
+
+        <script>
+
+
+           
+
+                //  $(".status_btn").click(function (albamid) {
+
+                function my(albamid){
+
+                      
+             
+
+
+                    $.ajax({
+
+
+                        type: "POST",
+                        url: "/PhotoGrapher/AlbamStatus/",
+                        data:{albamid:albamid},
+                        datatype: "text",
+                        success: function (Data) {
+
+                            alert("Yor Status Now :"+Data.Data+" -> Update succesfully");
+
+                           // $(".status_btn").html(Data.Data);
+
+
+
+                          window.location.reload(true);
+
+                         
+
+
+
+
+                        }
+
+
+                    });
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+        </script>
+
+
+
     }

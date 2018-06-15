@@ -22,7 +22,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.Entities.Client
         public int PhotoGrapherId { get; set; }  //Foreignkey From PhotoGrapher Model
 
 
-       
+
+      
+
+
+
+
 
 
 

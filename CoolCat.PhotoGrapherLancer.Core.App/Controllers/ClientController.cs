@@ -101,6 +101,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
             
             var postlist = jb.GetALLPost(ClientID);
 
+
             return View(postlist);
         }
 
@@ -109,6 +110,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
         public ActionResult JobsInterestd(int id)
         {
             var photoGrapherList = jb.GetAllInterest(id);
+
 
             return View(photoGrapherList);
         }
@@ -285,6 +287,8 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
         {
 
 
+            
+
 
             int clientid = ClientID;
 
@@ -316,12 +320,29 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
             obj.Basic_Profile = Db.PhotoGrapherBasicProfiles.Where(x => x.Fk_PhotoGrapher_ID == id).FirstOrDefault();  //inclue name showed be same navigation property name
             obj.Albams = Db.Albums.Where(x => x.Fk_PhotoGrapher_ID == id && x.Status=="Public").ToList();  //inclue name showed be same navigation property name
             obj.Gallary = Db.PhotoUploadGallarys.Where(x => x.Fk_PhotoGrapher_ID == id && x.Shared=="public").OrderByDescending(x => x.PhotoID).ToList();
-            obj.p_Picture = Db.ProfilePictures.Where(x => x.Fk_PhotoGrapher_ID == id && x.status == "Deactive").FirstOrDefault();
 
 
+               //This is the optional not use but objrefference not null so use
+                obj.p_Picture = Db.ProfilePictures.Where(x => x.Fk_PhotoGrapher_ID == id).FirstOrDefault();
+              //
 
-            //Check This Client This PhotoGrapher Ratting or Not
-            var cl= Db.PhotoGrapherFollowers.Where(x => x.Fk_Client_id == clientid && x.Fk_PhotoGrapher_ID==id).SingleOrDefault();
+
+            // Current profile picture show
+               var picture = Db.ProfilePictures.Where(x => x.Fk_PhotoGrapher_ID == id && x.status == "Deactive").FirstOrDefault();
+
+                if (picture !=null)
+                {
+                  ViewBag.img =picture.ImagePath;
+
+                }
+
+           
+
+
+        
+
+            //Check This Client This PhotoGrapher follower or Not
+            var cl = Db.PhotoGrapherFollowers.Where(x => x.Fk_Client_id == clientid && x.Fk_PhotoGrapher_ID==id).SingleOrDefault();
             if (cl != null)
             {
                 obj.Follower = cl;
