@@ -98,7 +98,12 @@ namespace CoolCat.PhotoGrapherLancer.Core.App.Controllers
         [HttpGet]
         public ActionResult PostShow()
         {
+
             
+          //  var interst_count = Db.Set<ClientJobsPost>().Where(x => Db.JobsInteresteds.Any(f => f.FkJobsPostId == x.PostId && f.FkClientID==ClientID)).Count();     //Join Use by navigation property
+
+          //  ViewBag.list = interst_count;
+
             var postlist = jb.GetALLPost(ClientID);
 
 

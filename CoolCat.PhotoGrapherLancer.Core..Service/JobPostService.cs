@@ -137,7 +137,7 @@ namespace CoolCat.PhotoGrapherLancer.Core.Service
                             //here function call ratting get photographer
                             ratting=socialservice.TotalRatting(p.PhotoGrapherId),
 
-
+                            //get current profile picture
                             profilepicture=pt.CurrentProfilePicture(p.PhotoGrapherId)
 
                         }).ToList();
